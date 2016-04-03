@@ -1,0 +1,80 @@
+<module>
+	<rawname>endpoint</rawname>
+	<name>EndPoint Manager</name>
+	<version>12.0.0.43</version>
+	<publisher>Schmoozecom.com</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>setup</type>
+	<category>Settings</category>
+	<description>Endpoint Manager - COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php - Supports provisioning of devices.</description>
+	<changelog>
+		*12.0.0.43* Fix Yealink config problem preventing provisioning.
+		*12.0.0.42* Allow Admin to change UCP customizations from extension mapping.  Write created date in config files for reboot.
+		*12.0.0.41* Fix Admin view of UCP customizations from starting when extension is selected.
+		*12.0.0.40* Fix Duplicate template problem. Add Polycom support for Admin Password. Fix Algo and Cyberdata ring destinations. Force Sangoma to write out upper and lowercase config files.  Fix extension mapping to show pager/ringer.
+		*12.0.0.39* Add admin support for UCP edits on extension mapping page.  Fix issue with Grandstream speeddials not saving.
+		*12.0.0.37* Fix Grandstream GXV-3240 boot loop with expansion modules
+		*12.0.0.36* Add Redial to Aastra keys. Fix Cisco AutoAnswer for Enterprise. Allow quotes and double quotes in wireless password field
+		*12.0.0.35* Allow models with no options to be selected on template page. Extension using template limited to selected brand as well. Fix template duplication issues.
+		*12.0.0.34* Remove default for Time Server 2 and 3, add option for Contact directory to Aastra templates.  Fix UCP-EPM integration with expansion modules.
+		*12.0.0.33* Fix Polycom horizontal key states, Add Obihai XML-API sync URL.
+		*12.0.0.32* Fix leading zero extension problem. Fix aastra.cfg no xml login problem.
+		*12.0.0.31* Proper hook declaration
+		*12.0.0.29* Only display extensions in UCP that are configured in EPM, Allow "Reset to Template" in UCP integration, Force reboot with Polycom, Replace firmware description when changing firmware
+		*12.0.0.28* Default to Account 1 for buttons if not set for XML-API
+		*12.0.0.27* Fix Algo 8028 registration issue and add XML-API support to Obihai
+		*12.0.0.26* Added entries to Digium to resolve special case RESTApp problems (tftp), Allow __ for Cisco SPA Parameters, Allow edits to custom basefile entries, Display models selected on basefile entries
+		*12.0.0.25* Fix install error correctly.
+		*12.0.0.24* Fix install error and images on IP670
+		*12.0.0.23* Allow VLAN in Yealink and fix Yealink Expansion Module types. Add UA attribute for Cisco SPA and image support for SPA942
+		*12.0.0.22* Add Aastra Language entries and fix lineXextPort variable
+		*12.0.0.21* Add UCP integration
+		*12.0.0.19* Fix Cisco SPA basefiles with hidden file entry
+		*12.0.0.18* Fix DST on Yealink, increase model space with basefiles
+		*12.0.0.17* Fix Yealink XML-API, change Polycom to use MAC-EXT.cfg file
+		*12.0.0.16* Fix XML-API BLF
+		*12.0.0.14* Fix Grandstream Dialpattern
+		*12.0.0.12* Fix Mitel labels on BLF
+		*12.0.0.11* Add Incom and fix Yealink XML-API
+		*12.0.0.10* Fix programmable keys on Aastra, Force 5060 if sip port is not defined in sip settings module, Allow + in dial plan on Grandstream, Add Line and Shared Line button types to Grandstream Line keys
+		*12.0.0.9* Fix line key on Panasonic and add max accounts to Aastra models
+		*12.0.0.8* Fix dialpattern issues, default firmware for Digium, fix import/export, display models selected
+		*12.0.0.7* Fix template layout with no mapped extensions
+		*12.0.0.5* Fix Function check on install
+		*12.0.0.4* Fix App key in Digium and extension hook
+		*12.0.0.3* Remove cache dir from git
+		*12.0.0.2* Start of version 12n
+	</changelog>
+	<depends>
+		<version>12.0</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>sipsettings ge 12.0.2</module>
+	</depends>
+	<methods>
+		<get_config pri="750">endpoint_core_process</get_config>
+	</methods>
+	<hooks>
+		<sysadmin class="Sysadmin">
+			<method namespace="FreePBX\modules" class="Endpoint" callingMethod="getModuleLicenseInformation">sendModuleLicenseInformation</method>
+		</sysadmin>
+	</hooks>
+	<fileinclude>
+	    <install>functions.inc.php</install>
+	</fileinclude>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/endpoint-manager.php</link>
+	</commercial>
+	<menuitems>
+		<endpoint beta="no">EndPoint Manager </endpoint>
+	</menuitems>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location>release/2.11/endpoint-2.11.0.1.27.tgz</location>
+	<md5sum>d635a5b60a80d478f2e61cad07067d9b</md5sum>
+</module>

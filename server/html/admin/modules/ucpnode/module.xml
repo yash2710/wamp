@@ -1,0 +1,28 @@
+<module>
+		<rawname>ucpnode</rawname>
+		<repo>standard</repo>
+		<name>UCP Node Server</name>
+		<version>12.0.1alpha6</version>
+		<publisher>Schmooze Com Inc</publisher>
+		<license>Commercial</license>
+		<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+		<changelog>
+				*12.0.1alpha1* First beta release.
+		</changelog>
+		<category>Admin</category>
+		<description>
+				UCP Node Server. Providing instant backend services in UCP
+		</description>
+		<depends>
+				<version>12.0.0</version>
+				<module>ucp ge 12.0.0beta40</module>
+		</depends>
+		<supported>
+				<version>12.0</version>
+		</supported>
+		<hooks>
+    		<dashboard namespace="FreePBX\modules\Dashboard\Sections" class="Overview">
+    			<method namespace="FreePBX\modules" class="Ucpnode" callingMethod="getSummary">dashboardService</method>
+    		</dashboard>
+		</hooks>
+</module>

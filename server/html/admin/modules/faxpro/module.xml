@@ -1,0 +1,82 @@
+<module>
+	<rawname>faxpro</rawname>
+	<name>Fax Configuration Professional</name>
+	<version>12.0.33</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>setup</type>
+	<category>Settings</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. The Fax Pro module adds functionality to the standard
+	FreePBX Fax modue. Outbound faxing can be done through a web interface on your FreePBX system. Simply type in a phone number and upload a PDF. You can optionally set the
+	outgoing PDF to use a locally stored fax coversheet with your faxes; and type in a personal message on the coversheet</description>
+	<changelog>
+		12.0.33 On reties detect FAX_SUCCESS from digium fax module during retries
+		12.0.32 FREEPBX-8341 11 digit extension number inbound fixes and some tweaks
+		12.0.31 FREEPBX-8367 syntax error, FREEPBX-8349 check permissions before send
+		12.0.30 Contact Manager improvements
+		12.0.29 Contact Manager support
+		12.0.28 Missed one part
+		12.0.27 FREEPBX-8245 Device Options missing when editing existing extensions
+		12.0.26 Use proper licensing technique
+		12.0.25 Using Fax for Asterisk
+		12.0.24 FREEPBX-8160 Show status from Asterisk Fax
+		12.0.23 Contact Manager Support
+		12.0.22 UCP Cleanup
+		12.0.21 FREEPBX-7268 Fax are not sent with the actual CID extension. They always use the CID trunk
+		12.0.20 Fatal bug on install
+		12.0.19 FREEPBX-7844 Fax retransmission on unanswered call. Fax permanently remain in outgoing folder
+		12.0.18 FREEPBX-7839 The notification email on outgoing fax result says no status
+		12.0.17 FREEPBX-7886 FREEPBX-7881 Fixes for Unsupported File formats
+		12.0.16 Delete faxes after sending
+		12.0.15 FREEPBX-7835 Fax pro sends even the previous attached document (to wrong recipient!!!)
+		12.0.14 FREEPBX-7838 Fix time representation
+		12.0.13 Standardize the layout of the dialog
+		12.0.12 Licensing Work
+		12.0.11 Licensing work
+		12.0.10 More work in UCP
+		12.0.9 Namespace Faxpro so it doesnt conflict in ARI
+		12.0.8 One more minor fix for visuals
+		12.0.7 Cleanup and fixes in UCP
+		12.0.6 Restructure Parts of UCP
+		12.0.5 Bump Version for GUI Fix
+		12.0.4 Fix to the licensed file
+		12.0.3 Don't copy duplicate functions
+		12.0.2 Fixes and Additions
+		12.0.1 UCP Module Addition
+		2.11.23 Extension Page Settings Saving Issues
+		2.11.20 Display Issues
+		2.11.19 JS Issues
+		2.11.18 UCP Support
+		2.11.16 Minor Changes Zend Licensing, to avoid potential issues.
+		2.11.15 Fixes issue where forwarded faxes would add the prefix
+		2.11.14 Add email notifcation on outbound faxes
+		2.11.13 Add global option on retry of failed faxes
+		2.11.12 #7032 - Mark faxes as old when clicking on them in ARI
+		2.11.11 Add support for retries
+		2.11.10 Fix issue where localstationid wasn't set on outgoing faxes
+		2.11.9 Fix issue when writing out routing dialplan
+		2.11.8 Fix issue with sendfax dialplan not being generated
+		2.11.7 Fix issue where deleting a company logo will clear other values, such as max pages and excess faxes options
+		2.11.6 Fix spelling, depend on fax, and don't try to splice dialplan that won't be available
+		2.11.5 fix spelling
+		2.11.4 Fix issue with validation of global prefix causing prefix issue
+	</changelog>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/fax-pro.php</link>
+  	</commercial>
+	<depends>
+		<version>12.0.1alpha54</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.47</module>
+		<module>fax ge 12.0.7</module>
+	</depends>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location>release/2.11/faxpro-2.11.14.tgz</location>
+	<md5sum>bf5ec7e3459ca8f11f2c0144b458784f</md5sum>
+</module>

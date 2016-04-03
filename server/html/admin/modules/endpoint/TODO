@@ -1,0 +1,15 @@
+//TODO: 
+[migrate]
+change digium to have linekeys and softkeys
+set account for all buttons
+
+[other]
+firmware caused httpd to max out
+
+extension mapping - force account
+
+add background support to grandstream gxp2130
+
+clear value when switching to xmlapi
+
+force clear of buttons - set buttons to nothing to blank out yealink

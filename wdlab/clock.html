@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<p id="clock1"></p>
+		<script>
+		var interval = setInterval(clockTimer,100);
+			
+			function clockTimer(){
+				var date = new Date();
+				document.getElementById("clock1").innerHTML = date.toLocaleTimeString();
+			}
+		</script>
+		
+	</body>
+</html>

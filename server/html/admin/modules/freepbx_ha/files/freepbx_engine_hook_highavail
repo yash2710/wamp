@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# High Availability hook for FreePBX.
+# If this is a HA machine, then the operator panels should
+# never auto start, they should only start as part of Asterisk.
+
+# Is this a HA machine?
+[ -f /etc/schmooze/pbx-ha -a -f /etc/drbd.d/asterisk.res ] && ISHA=true
+
+# If not, we don't care about anything else. Bye!
+[ ! $ISHA ] && return
+
+INSTALLED_PANELS=()
+
+find_panels() {
+	# List of known panels
+	PANELS=(XactViewServer XactViewServerV3 iSymphonyServer iSymphonyServerV3)
+	for panel in "${PANELS[@]}"; do
+		[ -f /etc/init.d/${panel} ] && INSTALLED_PANELS+=($panel)
+	done
+}
+
+run_asterisk_hook_freepbxha() {
+	find_panels
+	# Now go through each of the installed panels, make sure they're set to NOT
+	# START automatically, and then start them.
+	for installed in "${INSTALLED_PANELS[@]}"; do
+		service $installed status
+		RETVAR=$?
+		# If it's zero, it was already running.
+		if [ $RETVAR -eq 0 ]; then
+			chkconfig $installed off
+			service $installed restart
+		else
+			service $installed start
+		fi
+	done
+}
+
+stop_asterisk_hook_freepbxha() {
+	find_panels
+	for installed in "${INSTALLED_PANELS[@]}"; do
+		service $installed stop > /dev/null 2>&1 &
+	done
+}

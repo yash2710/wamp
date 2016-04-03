@@ -1,0 +1,101 @@
+<?php
+// vim: set filetype=php tabstop=4 shiftwidth=4 autoindent smartindent:
+
+$restrict_mods = true;
+if (!@include_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freepbx.conf')) { 
+	include_once('/etc/asterisk/freepbx.conf'); 
+}
+
+global $db;
+$agi = new AGI();
+
+//Get the variables needed
+$src = scrub_agi($agi->get_variable("AMPUSER"));
+$dst = scrub_agi($agi->get_variable("CALLLIMIT_DEST"));
+$cRoute = scrub_agi($agi->get_variable("CALLLIMIT_ROUTE"));
+$id = scrub_agi($agi->get_variable("CALLLIMIT_ID"));
+$emergency = scrub_agi($agi->get_variable("EMERGENCYROUTE"));
+
+if (isset($cRoute) && $cRoute != '') {
+	// This is a route that has call limits.
+	$agi->verbose("Call limit checking ID $id", 2);
+
+	// Grab our stuff.
+	$res = $db->getAll("SELECT `key`, `value` FROM `calllimit` WHERE `key` LIKE '".$id."\_%'");
+
+	// Make it a bit saner.
+	foreach($res as $arr) {
+		$calllimit[$arr[0]] = $arr[1];
+	}
+
+	$rec = $calllimit[$id."_recording"];
+	$rec_id = $calllimit[$id."_recordingid"];
+
+	// Now, check CDR for those periods. 
+	foreach(array(1,2,3) as $check) {
+
+		// They come back as, eg, 12_periodtype_1 = "Hours"
+
+		$period = $calllimit[$id."_periodtype_".$check];
+		$length = $calllimit[$id."_periodlength_".$check];
+		$qty = $calllimit[$id."_qty_".$check];
+
+		// Check tihs one first. It's the most likely.
+		if ($calllimit[$pt] == "Unused")
+			continue;
+
+		switch ($period) {
+			case "Hours":
+				$mul = 3600;  // 60*60
+			break;
+			case "Days":
+				$mul = 86400; // 60*60*24
+			break;
+			case "Months":
+				$mul = 2678400; // 60*60*24*31 
+			break;
+			default:
+			$mul = 0;
+		}
+
+		if ($mul == 0) {
+			$agi->verbose("Error - Have ".$period." as a period. Refusing to continue.", 3);
+			exit;
+		}
+
+		// Now we need to see if $dst has been called more than $qty since now-$period*mul;
+		$startDate = time()-($length*$mul);
+		$endDate = time();
+
+		$sql = 'SELECT count(calldate) as calls FROM asteriskcdrdb.cdr WHERE dst = ? and UNIX_TIMESTAMP(calldate) >= ? and UNIX_TIMESTAMP(calldate) <= ?';
+		$agi->verbose("$dst,$startDate,$endDate", 2);
+
+		$cdrCount = $db->getOne($sql, array($dst,$startDate,$endDate));
+		if (DB::IsError($cdrCount)) {                 
+			$agi->verbose('Encountered a database error, contact customer care.');
+		} else if (isset($cdrCount)) {
+			if ($cdrCount >= $qty && $emergency != "YES") {
+				$agi->verbose("Failed check - $dst has been called $qty or more times in $length $period (".$cdrCount.")", 0);
+				// If $rec is null or None, playback default
+				if (!$rec || $rec_id == "None") {
+					$agi->exec('playback', 'silence/1&cannot-complete-as-dialed&check-number-dial-again');
+				} else {
+					$agi->exec('playback', $rec);
+				}
+				$agi->hangup();
+			} else {
+				$agi->verbose("Passed check - $dst has been called less than $qty (".$cdrCount.") times in $length $period");
+			}
+		} else {
+			$agi->verbose("Passed check - $dst has never been called before");
+		}
+	}
+}
+
+function scrub_agi($data=array()) {
+	if (isset($data['data'])) {
+		return $data['data'];
+	} else {
+		return $data;
+	}
+}

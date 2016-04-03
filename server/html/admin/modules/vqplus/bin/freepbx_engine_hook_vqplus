@@ -1,0 +1,17 @@
+#!/bin/bash
+
+run_asterisk_hook_vqplus() {
+	queuecallback_exists && /etc/init.d/queuecallback start
+}
+
+stop_asterisk_hook_vqplus() {
+	queuecallback_exists && /etc/init.d/queuecallback stop
+}
+
+queuecallback_exists() {
+	if [[ -e /etc/init.d/queuecallback ]]; then
+		return 0
+	else
+		return 1
+	fi
+}

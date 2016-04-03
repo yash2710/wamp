@@ -1,0 +1,51 @@
+<html>
+<body>
+<script>
+var i;
+
+var product = {};
+product["product1"]=200;
+product["product2"]=300;
+product["product3"]=600;
+product["product4"]=350;
+product["product5"]=400;
+var x = {};
+x["product1"]="";
+x["product2"]="";
+x["product3"]="";
+x["product4"]="";
+x["product5"]="";
+var y = {};
+y["product1"]="";
+y["product2"]="";
+y["product3"]="";
+y["product4"]="";
+y["product5"]="";
+for(i=1;i<8;i++){
+	var a = prompt("Enter product number for day "+i+" Enter 0 to skip to next day",0);
+	if(a==0)
+		continue;
+	if(a<0 || a>5){
+		alert("Invalid entry");
+		i--;
+		continue;
+	}
+	a="product" + a;
+	var b = prompt("Enter qty for "+a+" on day "+i);
+	if(b <= 0){
+		alert("Invalid entry Will not be counted.");
+		i--;
+		continue;
+	}
+	x[a] += b
+	y[a] = x[a]*product[a];
+	i--;
+}
+document.writeln("<table border='1' cellpadding='5' style='border-collapse: collapse;'><tr><th>Product</th><th>Qty</th><th>Total</th></tr>");
+for(i=1;i<6;i++){
+	document.write("<tr><td>Product "+i+"</td><td align='center'>"+x["product"+i]+"</td><td align='right'>"+y["product"+i]+"</td></tr>");
+}
+	document.write("</table>");
+</script>
+</body>
+</html>

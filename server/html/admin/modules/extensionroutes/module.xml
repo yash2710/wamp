@@ -1,0 +1,46 @@
+<module>
+	<rawname>extensionroutes</rawname>
+	<repo>commercial</repo>
+	<name>Extension Routes</name>
+	<version>12.0.7</version>
+	<publisher>Schmoozecom.com</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>free</type>
+		<link>//schmoozecom.com/extension-routing.php</link>
+	</commercial>
+	<category>Connectivity</category>
+	<description>COMMERCIAL MODULE, REQUIRES A LICENSE.
+        Allows the explicit exclusion/inclusion of extensions for each route, including calls forwarded or followme-ed from the extension</description>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.10.0</module>
+		<module>framework ge 12.0.1alpha26</module>
+	</depends>
+	<changelog>
+		*12.0.7* Final fixes for zending issues
+		*12.0.6* FREEPBX-7531 fixed in FreePBX 12
+		*12.0.4* Fix time-of-day issues
+		*12.0.3* Add Class of Service integration.
+		*12.0.1* Rewrite to work with Class of Service module.
+		*2.11.0.4* Enable access from Class of Service
+		2.11.0.3 Workaround for PHP bug where array keys that contain numbers beginning with zero are converted to integers. This causes issues if you have extension numbers starting with zero
+		2.11.0.1 #6753 mark outbound calls as EXTERNAL so that CID Cnum ALias field is not used, #6755 Duplicate routes works with Extension Routing now
+		2.11.0.1 #6696 avoid AstDB corruption
+		2.11.0.0 Bump for 2.11
+		2.10.0.7 Add check/uncheck all checkbox to extensions page
+		2.10.0.6 Fix bug with new routes not allowing extensions by default
+		2.10.0.5 Add dependency on framework version 2.10.1.2
+		2.10.0.4 Fix JS sizing code
+		2.10.0.2 Fix JS for adding inputs
+		2.10.0.1 Packaging of ver 2.10.0.1
+		*2.10.0.0* First Implementation
+	</changelog>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location></location>
+	<md5sum></md5sum>
+</module>

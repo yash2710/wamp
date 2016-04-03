@@ -1,0 +1,41 @@
+<module>
+	<rawname>callerid</rawname>
+	<name>CallerID Managment</name>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php  The CallerID Management module is a unique way to
+	modify the caller ID that is outpulsed on the fly. By dialing a simple feature code you can change the Caller ID for the next call on your extension. Optionally you
+	can also specify the Persistent field, If this is checked the CID is permanently changed for all future calls for your extension until another feature code is
+	entered to change it </description>
+	<publisher>Schmooze Com Inc</publisher>
+	<repo>commercial</repo>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<version>2.11.0.7</version>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/caller-id.php</link>
+	</commercial>
+	<changelog>
+		*2.11.0.7* Sales cleanup
+		*2.11.0.3* Add option to use '*' for callerid to dynamically input number
+		*2.11.0.2* Packaging of ver 2.11.0.2
+		*2.11.0.1* Don't override recording settings when changing callerid
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.18* Packaging of ver 2.10.0.18
+		*2.10.0.17* Packaging of ver 2.10.0.17
+	</changelog>
+	<depends>
+                <version>2.9.0</version>
+                <phpcomponent>Zend Guard Loader</phpcomponent>
+                <phpversion>5.3.0</phpversion>
+                <module>sysadmin ge 2.10.0</module>
+	</depends>
+	<menuitems>
+		<callerid>CallerID Management</callerid>
+	</menuitems>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<location>release/2.11/callerid-2.11.0.3.tgz</location>
+	<md5sum>34923514a157336b7300d6ccbec23b53</md5sum>
+</module>

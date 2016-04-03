@@ -1,0 +1,134 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language template for faxpro
+# Copyright (C) 2008, 2009, 2010, 2011 Bandwith.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-04-28 17:02-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Fax Configuration Professional"
+msgstr ""
+
+msgid "Basic"
+msgstr ""
+
+msgid "Extends the fax module with profesional options"
+msgstr ""
+
+msgid "Fax Options"
+msgstr ""
+
+msgid "Fax Presentation Options"
+msgstr ""
+
+msgid "Default Fax header"
+msgstr ""
+
+msgid ""
+"Header information that is passed to remote side of the fax transmission and "
+"is printed on top of every page."
+msgstr ""
+
+msgid "Default Local Station Identifier"
+msgstr ""
+
+msgid ""
+"Text string that identifies the sender identification to the remote side of "
+"the fax transmission."
+msgstr ""
+
+msgid "Outgoing Email address:"
+msgstr ""
+
+msgid ""
+"Email address that faxes appear to come from if 'system default' has been "
+"chosen as the default fax extension."
+msgstr ""
+
+msgid "Fax Transport Options"
+msgstr ""
+
+msgid "Error Correction Mode"
+msgstr ""
+
+msgid ""
+"Error Correction Mode (ECM) option is used to specify whether\n"
+"\t\t\t\t to use ecm mode or not."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Maximum transfer rate"
+msgstr ""
+
+msgid "Maximum transfer rate used during fax rate negotiation."
+msgstr ""
+
+msgid "Minimum transfer rate"
+msgstr ""
+
+msgid "Minimum transfer rate used during fax rate negotiation."
+msgstr ""
+
+msgid "Modem"
+msgstr ""
+
+msgid "Modem Type."
+msgstr ""
+
+msgid "Fax Recive Options"
+msgstr ""
+
+msgid "Default fax instance:"
+msgstr ""
+
+msgid ""
+"Select 'system default' to have the system act as a fax instance and receive "
+"and faxes. You can then route faxes to this instance and avoid having to "
+"route faxes to an instance accociated with a specific entity. This can be "
+"the system using Asterik's internal capabilites or it can be an external "
+"extesnion, such as a physical fax machine"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "system default"
+msgstr ""
+
+msgid "Default Recipent Email address:"
+msgstr ""
+
+msgid ""
+"Email address used if 'system default' has been chosen as the default fax "
+"extension."
+msgstr ""
+
+msgid "Submit"
+msgstr ""

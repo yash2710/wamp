@@ -1,0 +1,12 @@
+#!/bin/bash
+chown_asterisk_hook_endpoint() {
+    if [ -d "/tftpboot" ]; then 
+        chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP $(readlink -f /tftpboot)
+    fi
+    if [ -d "$AMPWEBROOT/aastra" ]; then
+        chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP $(readlink -f $AMPWEBROOT/aastra)
+    fi
+    if [ -d "/var/cache/aastra" ]; then
+        chown -R $AMPASTERISKUSER:$AMPASTERISKGROUP $(readlink -f /var/cache/aastra)
+    fi
+}

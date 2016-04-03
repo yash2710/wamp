@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		
+		<meta name="author" content="Girish ramnani" />
+		<script>
+function myFunction() {
+    location.reload();
+}
+myfunction();
+</script>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/vicons-font.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/buttons.css" />
+		<script src="js/modernizr.custom.js"></script>
+		<script src="quizconfig.js">
+</script>
+
+<script>
+var actualchoices=new Array()
+</script>
+
+	</head>
+	<body>
+			<div class="container">
+			<header style="margin-bottom:20px">
+
+				<h2>Yuva Unstoppable</h2>
+				<h1>MPower</h1>
+				<div align="right"><font color="white" size="2">By <a href="http://girishramnani.wc.lt"><font color="white">Girish Ramnani</font></a> and <a href="http://yashtrivedi.wc.lt"><font color="white">Yash Trivedi</font></a>
+			</font></div>	
+			</header>
+			<div align="right">
+			
+			</div>
+			</div>
+				<form class="ac-custom ac-radio ac-fill" autocomplete="off" method="POST" name='myquiz'>
+					<h2>यदि आप छुट्टी के लिए अपने प्रिन्सिपल को एक पत्र लिखना चाहते हैं तो आप इनमें से क्या इस्तेमाल करोगे?</h2>
+					<ul>
+						<li><input id="r1" name="question1" value='a' type="radio"><label for="r1">स्प्रैडशीट - Spreadsheet</label></li>
+						<li><input id="r2" name="question1" value='b' type="radio"><label for="r2">वर्ड प्रॉसेसर - Word Processor</label></li>
+						<li><input id="r3" name="question1" value='c' type="radio"><label for="r3">टक्स पैंट - Tux Paint</label></li>
+						<li><input id="r4" name="question1" value='d' type="radio"><label for="r4">वर्ड आर्ट - WordArt</label></li>
+					</ul>
+					<br><br>
+					<h2>इनमें से कौनसा विकल्प बेजोड़ है?</h2>
+					<ul>
+						<li><input id="r5" name="question2" value='a' type="radio"><label for="r5">टक्स पैंट - Tux Paint</label></li>
+						<li><input id="r6" name="question2" value='b' type="radio"><label for="r6">एक्स पैंट - Xpaint</label></li>
+						<li><input id="r7" name="question2" value='c' type="radio"><label for="r7">ओपेन ऑफिस - OpenOffice</label></li>
+						<li><input id="r8" name="question2" value='d' type="radio"><label for="r8">कलर पैंट - Kolor Paint</label></li>
+					</ul><br><br>
+					<h2>कॉपी करने के लिए कौनसा शॉर्टकट इस्तेमाल करोगे?</h2>
+					<ul>
+						<li><input id="r9" name="question3" value='a' type="radio"><label for="r9">Ctrl+X</label></li>
+						<li><input id="r10" name="question3" value='b' type="radio"><label for="r10">Ctrl+A</label></li>
+						<li><input id="r11" name="question3" value='c' type="radio"><label for="r11">Ctrl+S</label></li>
+						<li><input id="r12" name="question3" value='d' type="radio"><label for="r12">Ctrl+C</label></li>
+					</ul><br><br>
+					<h2>अगर माऊस ना चल रहा हो तो क्या आप कम्प्युटर पर काम कर सकते हैं?</h2>
+					<ul>
+						<li><input id="r13" name="question4" value='a' type="radio"><label for="r13">हाँ</label></li>
+						<li><input id="r14" name="question4" value='b' type="radio"><label for="r14">ना</label></li>
+						<li><input id="r15" name="question4" value='c' type="radio"><label for="r15"></label></li>
+						<li><input id="r16" name="question4" value='d' type="radio"><label for="r16"></label></li>
+					</ul><br><br>
+					<h2>अगर सीपीयू (CPU) ना चल रहा हो तो क्या आप कम्प्युटर पे काम कर सकते हैं?</h2>
+					<ul>
+						<li><input id="r17" name="question5" value='a' type="radio"><label for="r17">हाँ</label></li>
+						<li><input id="r18" name="question5" value='b' type="radio"><label for="r18">ना</label></li>
+						<li><input id="r19" name="question5" value='c' type="radio"><label for="r19"></label></li>
+						<li><input id="r20" name="question5" value='d' type="radio"><label for="r20"></label></li>
+					</ul><br><br>
+					<h2>अगर कम्प्युटर मैं ऑपरेटिंग सिस्टम - ओएस (operating system - OS) ना हो तो क्या आप कम्प्युटर के साथ काम कर सकते हैं?</h2>
+					<ul>
+						<li><input id="r21" name="question6" value='a' type="radio"><label for="r21">हाँ</label></li>
+						<li><input id="r22" name="question6" value='b' type="radio"><label for="r22">ना</label></li>
+						<li><input id="r23" name="question6" value='c' type="radio"><label for="r23"></label></li>
+						<li><input id="r24" name="question6" value='d' type="radio"><label for="r24"></label></li>
+					</ul><br><br>
+					<h2>दिए गए विकल्पों मैं से कौनसा एक ओएस(OS) नहीं हैं?</h2>
+					<ul>
+						<li><input id="r25" name="question7" value='a' type="radio"><label for="r25">विंडोज - Windows</label></li>
+						<li><input id="r26" name="question7" value='b' type="radio"><label for="r26">उबुंतु - Ubuntu</label></li>
+						<li><input id="r27" name="question7" value='c' type="radio"><label for="r27">सेंट ओएस - CentOS</label></li>
+						<li><input id="r28" name="question7" value='d' type="radio"><label for="r28">ओपेन ऑफिस - OpenOffice</label></li>
+					</ul><br><br>
+					<h2>वर्ड प्रॉसेसर किस चीज़ क लिए इस्तेमाल होता हैं?</h2>
+					<ul>
+						<li><input id="r29" name="question8" value='a' type="radio"><label for="r29">स्प्रैडशीट - SpreadSheet</label></li>
+						<li><input id="r30" name="question8" value='b' type="radio"><label for="r30">डॉकयुमेंट - Document</label></li>
+						<li><input id="r31" name="question8" value='c' type="radio"><label for="r31">प्रेजेंटेशन - Presentation</label></li>
+						<li><input id="r32" name="question8" value='d' type="radio"><label for="r32">इंटरनेट - Internet</label></li>
+					</ul><br><br>
+					<h2>दिए गए विकल्पों मैं से कौनसा सीपीयू(CPU) का भाग नहीं हैं?</h2>
+					<ul>
+						<li><input id="r33" name="question9" value='a' type="radio"><label for="r33">रेम - RAM</label></li>
+						<li><input id="r34" name="question9" value='b' type="radio"><label for="r34">हार्ड डिस्क - Hard Disk</label></li>
+						<li><input id="r35" name="question9" value='c' type="radio"><label for="r35">प्रॉसेसर - Processor</label></li>
+						<li><input id="r36" name="question9" value='d' type="radio"><label for="r36">मॉनिटर - Monitor</label></li>
+					</ul><br><br>
+					<h2>दिए गए विकल्पों मैं से किसके बिना भी एक कम्प्युटर चल सकता हैं?</h2>
+					<ul>
+						<li><input id="r37" name="question10" value='a' type="radio"><label for="r37">मॉनिटर - Monitor</label></li>
+						<li><input id="r38" name="question10" value='b' type="radio"><label for="r38">हार्ड डिस्क - Hard Disk</label></li>
+						<li><input id="r39" name="question10" value='c' type="radio"><label for="r39">स्पीकर - Speaker</label></li>
+						<li><input id="r40" name="question10" value='d' type="radio"><label for="r40">रेम - RAM</label></li>
+					</ul><br><br>
+					<h2>नोबिता एक चित्र बना रहा है और वह उसका बैक्ग्राउण्ड <font color="blue"><i>नीले</i></font> रंग का करना चाहता है।  निम्नलिखित विकल्पों मैं से उसे क्या इस्तेमाल करना चाहिए?</h2>
+					<ul>
+						<li><input id="r41" name="question11" value='a' type="radio"><label for="r41">फ़िल बकेट - Fill Bucket</label></li>
+						<li><input id="r42" name="question11" value='b' type="radio"><label for="r42">पैंट ब्रश - Paint Brush</label></li>
+						<li><input id="r43" name="question11" value='c' type="radio"><label for="r43">पेंसिल - Pencil</label></li>
+						<li><input id="r44" name="question11" value='d' type="radio"><label for="r44">ड्रोप्पर - Dropper</label></li>
+					</ul><br><br>
+					<h2>उस टेक्स्ट को क्या कहते हैं जो डॉकयुमेंट के हर पेज पे ऊपर लिखा होता हैं?</h2>
+					<ul>
+						<li><input id="r45" name="question12" value='a' type="radio"><label for="r45">हैडर - Header</label></li>
+						<li><input id="r46" name="question12" value='b' type="radio"><label for="r46">फूटर - Footer</label></li>
+						<li><input id="r47" name="question12" value='c' type="radio"><label for="r47">ट्रेलर - Trailer</label></li>
+						<li><input id="r48" name="question12" value='d' type="radio"><label for="r48">कमेंट - Comment</label></li>
+					</ul><br><br>
+					<h2>अनेक प्रकार के अलिग्न्मेंट कौनसे हैं?</h2>
+					<ul>
+						<li><input id="r49" name="question13" value='a' type="radio"><label for="r49">लेफ्ट - Left</label></li>
+						<li><input id="r50" name="question13" value='b' type="radio"><label for="r50">राइट - Right</label></li>
+						<li><input id="r51" name="question13" value='c' type="radio"><label for="r51">सेंटर - Center</label></li>
+						<li><input id="r52" name="question13" value='d' type="radio"><label for="r52">सभी - All of These</label></li>
+					</ul><br><br>
+					<h2>निम्नलिखित मैं से कौनसा विकल्प ड्राइंग मई उपयोग नहीं हो सकता हैं?</h2>
+					<ul>
+						<li><input id="r53" name="question14" value='a' type="radio"><label for="r53">पेंसिल - Pencil</label></li>
+						<li><input id="r54" name="question14" value='b' type="radio"><label for="r54">टेबल - Table</label></li>
+						<li><input id="r55" name="question14" value='c' type="radio"><label for="r55">लाइन - Line</label></li>
+						<li><input id="r56" name="question14" value='d' type="radio"><label for="r56">स्प्रे केन - Spray Can</label></li>
+					</ul><br><br>
+					<h2>निम्नलिखित मैं से डॉकयुमेंट मैं चित्र डालने के लिए क्या इस्तेमाल करोगे?</h2>
+					<ul>
+						<li><input id="r57" name="question15" value='a' type="radio"><label for="r57">क्लिप आर्ट - Clip Art</label></li>
+						<li><input id="r58" name="question15" value='b' type="radio"><label for="r58">टेबल - Table</label></li>
+						<li><input id="r59" name="question15" value='c' type="radio"><label for="r59">लाइन -  Line</label></li>
+						<li><input id="r60" name="question15" value='d' type="radio"><label for="r60">स्प्रे केन - Spray Can</label></li>
+					</ul><br><br>
+				</form>
+		
+		<div align="center">
+<div class="box bg-2">
+					<button class="button button--naira button--border-thick button--text-thick button--text-upper button--size-s button--naira-up" onClick="gradeit()"><i class="button__icon icon icon-upload" ></i><span>Submit</span></button>
+				</div>
+
+                </div>
+		<script src="js/svgcheckbx.js"></script>
+	</body>
+</html>

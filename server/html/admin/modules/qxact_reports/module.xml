@@ -1,0 +1,50 @@
+<module>
+	<rawname>qxact_reports</rawname>
+	<name>QXact Reports</name>
+	<version>2.11.0.7</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<type>tool</type>
+	<category>Reports</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. If you use ACD/Queues you need Q-Xact to help you make
+	the most of your time! QXact is an advanced reporting module that lets administrators keep an eye on every aspect of there queues. With Q-Xact you are given insight into each
+	and every one of your queues. Q-Xact gives you full control over what data is displayed for each type of report and allows you to build custom templates for quick reporting.
+	Each report type such as "All Call Distribution by Queue" has a list of columns that can be checked and unchecked for on the fly view customization.
+
+	QXact is broken up into two sections. Templates and Reports. Templates allows you to build the specific information that you would like to view in the report and then save it. Reports
+	allows you to run your template against any or all of your Agents and Queues.</description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/qxact.php</link>
+	</commercial>
+	<changelog>
+		*2.11.0.7* #8092
+		*2.11.0.6* Fix for % Abnd showing the average and not total on the total line
+		*2.11.0.5* #7522
+		*2.11.0.4* #7323
+		*2.11.0.1* Sales cleanup
+		*2.11.0.0* Bump for 2.11
+		*2.10.1.21* Packaging of ver 2.10.1.21
+		*2.10.1.20* re #1301, 1302
+		*2.10.1.19* Handle special chars in strings better
+		*2.10.1.18* Packaging of ver 2.10.1.18
+		*2.10.1.17* re #1263 -
+	</changelog>
+	<depends>
+		<version>2.7.0</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<menuitems>
+		<qxact_reports>QXact Reports</qxact_reports>
+		<qxact_admin>Qxact Report Templates</qxact_admin>
+	</menuitems>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<location>release/2.11/qxact_reports-2.11.0.0.tgz</location>
+	<md5sum>ed13e9950d65ffe7f159395a6336576e</md5sum>
+</module>

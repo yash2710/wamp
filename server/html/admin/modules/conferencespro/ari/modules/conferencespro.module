@@ -1,0 +1,180 @@
+<?php
+
+/**
+ * @file
+ * Functions for the interface to the help page
+ */
+
+/**
+ * Class for help
+ *
+ */
+class conferencespro{
+	
+
+	/*
+	* rank (for prioritizing modules)
+	*/
+	function rank(){
+		$rank = 3;
+		return $rank;
+	}
+
+	/*
+	* init
+	*/
+	function init(){}
+
+	function action($args){
+		//save conference settings
+	 	$conf = $this->get_conf();
+		$rconf = isset($_REQUEST['conf']) ? $_REQUEST['conf'] : '';
+		//if we have settings, merge them into the main array
+		if ($rconf) {
+			foreach ($rconf as $myconf => $r) {
+				foreach ($r as $opt => $val) {
+					$conf[$myconf]['opt'][$opt] = $val;
+				}
+			}
+		}
+		
+		//save all settings
+		if($conf) {
+			$this->save_conf($conf);
+		}
+		//show main page
+		$ret = $this->display($args);
+		return $ret;
+	}
+
+	/*
+	* Adds menu item to nav menu
+	*
+	* @param $args
+	*   Common arguments
+	*/
+	function navMenu($args){
+		//dont show this page if there are no conferences assigned to the current users
+		if ($this->get_conf()) {
+			$ret .= "<small><small><a href='" . $_SESSION['ARI_ROOT'] . "?m=conferencespro&f=action'>" . _("Conference Pro") . "</a></small></small>";
+			return $ret;
+		}
+	}
+
+	/*
+	* Displays stats page
+	*
+	* @param $args
+	*   Common arguments
+	*/
+	function display($args){
+		//echo '<pre>';print_r( $_REQUEST);
+		$html = '';
+		$html .= '<h2>' . _('Conference Pro') . '</h2>';
+		$html .= '<hr>';
+		
+		$rooms = $this->get_conf();
+		//echo '<pre>';print_r($rooms);echo '</pre>';
+		$html .= '<form name="conferencespro" action="/recordings/index.php?m=conferencespro&amp;f=display" method="post" onsubmit="return submit_check();">';
+		
+		foreach ($rooms as $r) {
+			$html .= $this->draw_options($r);
+		}
+				
+		$html .= '<br></br>';
+		$html .= '<input type="hidden" name="f" value="action">';
+		$html .= '<input type="submit">';
+		$html .= '</form>';
+		
+		if(preg_match("/^(.*)conferencespro\//i",__FILE__,$matches)) {
+			$path = $matches[0];
+			if(file_exists($path.'views/ari_js.php')) {
+				$html .= load_view($path.'views/ari_js.php',array('conference_list' => array_keys($rooms)));
+			}
+		}
+		
+		return $html;
+	}
+	
+	function draw_options($args) {
+		$vars = $args;
+		if(preg_match("/^(.*)conferencespro\//i",__FILE__,$matches)) {
+			$path = $matches[0];
+			if(file_exists($path.'views/ari_options.php')) {		
+				//now draw up the table
+				$html = load_view($path.'views/ari_options.php',$vars);
+			} else {
+				$html = " Error could not open views file: ".$path.'views/ari_options.php';
+			}
+		} else {
+			$html = "Error Could not Parse String: ".__FILE__;
+		}
+		
+		return $html;
+	}
+	
+	function get_conf() {
+		$db =  $_SESSION['dbh_asterisk'];
+		$user = $_SESSION['ari_user']['extension'];
+		$sql = 'SELECT * FROM conferencespro_rooms';
+		$sql .= ' LEFT JOIN meetme ON meetme.exten = conferencespro_rooms.room';
+		$sql .= ' WHERE user = ?';
+		$res = $db->getAssoc($sql, true, array($user), DB_FETCHMODE_ASSOC);
+		//expand options so that we can deal with them individually
+		if (!$db->isError($res)) { //Check to make sure module is installed. If its not then lets not crash ARI
+			foreach ($res as $my => $r) {
+				$opt = str_split($r['options']);
+				foreach ($opt as $o) {
+					$res[$my]['opt'][$o] = 'true';
+				}
+			}	
+			return $res;
+		} else {
+			return false;
+		}
+	}
+	
+	function save_conf($conf) {
+		global $amp_conf;
+		$db =  $_SESSION['dbh_asterisk'];
+		$conferences = array();
+		
+		foreach ($conf as $room => $c) {
+			//Build options outside of the options string and then unset them as needed.
+			
+			$conferences[$room]['joinmsg_id'] = isset($c['opt']['joinmsg_id']) ? $c['opt']['joinmsg_id'] : $c['joinmsg_id'];
+			$conferences[$room]['music'] = isset($c['opt']['music']) ? $c['opt']['music'] : $c['music'];
+			$conferences[$room]['users'] = isset($c['opt']['users']) ? $c['opt']['users'] : $c['users'];
+			$conferences[$room]['description'] = isset($c['opt']['description']) ? $c['opt']['description'] : $c['description'];
+			$conferences[$room]['adminpin'] = isset($c['opt']['adminpin']) ? $c['opt']['adminpin'] : $c['adminpin'];
+			$conferences[$room]['userpin'] = isset($c['opt']['userpin']) ? $c['opt']['userpin'] : $c['userpin'];
+			
+			$allowed_options = array('w','o','T','q','c','i','M','s','r','m');
+			//build the options string
+			foreach($c['opt'] as $o => $val) {
+				if (in_array($o,$allowed_options) && ($val == true)) {
+					$conferences[$room]['opts'] .= $o;
+				}
+			}
+		}
+		
+		//if we have options to save, do so
+		if ($conferences) {
+			foreach ($conferences as $room => $opt) {
+				$sql = 'UPDATE meetme SET options = ?, joinmsg_id = ?, music = ?, users = ?, description = ?, userpin = ?, adminpin = ? WHERE exten = ?';
+				$q = $db->query($sql, array($opt['opts'], $opt['joinmsg_id'], $opt['music'], $opt['users'], $opt['description'], $opt['userpin'], $opt['adminpin'], $room));
+				if ($db->isError($q)) {
+					die($q->getUserInfo());
+				}
+			}
+			
+		//reload freepbx to apply changes, run needreload incase the statement below fails. Just for good measure
+		needreload();
+		exec($amp_conf['AMPBIN'] . '/retrieve_conf 2>&1', $ret);
+		exec($amp_conf['AMPBIN'] . '/module_admin reload 2>&1', $ret);
+		}
+	}
+
+}
+
+?>

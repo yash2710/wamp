@@ -1,0 +1,17 @@
+#!/bin/bash
+
+run_asterisk_hook_restapps() {
+	restapps_exists && /etc/init.d/restapps start
+}
+
+stop_asterisk_hook_restapps() {
+	restapps_exists && /etc/init.d/restapps stop
+}
+
+restapps_exists() {
+	if [[ -e /etc/init.d/restapps ]]; then
+		return 0
+	else
+		return 1
+	fi
+}

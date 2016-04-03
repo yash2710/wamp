@@ -1,0 +1,70 @@
+<module>
+	<rawname>parkpro</rawname>
+	<name>Parking Pro</name>
+	<version>12.0.5</version>
+	<publisher>Schmoozecom.com</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/parkpro.php</link>
+	</commercial>
+	<repo>commercial</repo>
+	<description>
+		PARK PRO - COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php - Provides Multiple Parking Lots, per extension assignment for default lots, Park and Page Announce and other advanced parking features to come
+	</description>
+	<changelog>
+		*12.0.5* FREEPBX-8371 - Remove beta tag
+		*12.0.4* Fixes to licensing
+		*12.0.3* Fixes to ParkAndAnnounce on Asterisk 12 and higher
+		*12.0.2* Prioritize hook to happen after paging
+		*12.0.1alpha8* FREEPBX-7762 Unable to set CallerID Prepend in Park and Announce related to setting invalid page group
+		*12.0.1alpha7* Add doConfigPageInit
+		*12.0.1alpha6* Fixes FREEPBX-7229 ability to disable courtesy beep
+		*12.0.1alpha5* Fixes FREEPBX-7322 issue with comparing of blank strings
+		*12.0.1alpha4* Use New Functions for getting last ID from DB
+		*12.0.1alpha3* Fixes FREEPBX-7221
+		*12.0.1alpha2* Change function
+		*12.0.1alpha1* Asterisk 12 Support
+		*2.11.0.3* Fixes #6871, a related issue from Parking which affects this module as well. Fixes #FREEI-49 *86 Feature code not working
+		*2.11.0.2* Add hints for each parking lot
+		*2.11.0.0beta1.25* Packaging of ver 2.11.0.0beta1.25
+		*2.11.0.0beta1.24* Don't automatically include all functions
+		*2.11.0.0beta1.23* Remove debug statement
+		*2.11.0.0beta1.22* Fixes invalid destination notifications on the dashboard
+		*2.11.0.0beta1.20* Add 'This feature is currently not licensed. For more information on this feature or to purchase this Add On module please see the information below.'
+	</changelog>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+			<link>//www.schmoozecom.com/parkpro.php</link>
+	</commercial>
+	<popoverss>
+		<pannounce>
+			<display>pannounce</display>
+			<action>add</action>
+		</pannounce>
+ 	</popoverss>
+	<depends>
+		<engine>asterisk ge 1.8</engine>
+		<version>12.0.1alpha10</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>parking ge 12.0.1alpha4</module>
+	</depends>
+		<requirements>
+			<module>parking</module>
+		</requirements>
+		<menuitems>
+		<pannounce>Park and Announce</pannounce>
+	</menuitems>
+	<methods>
+		<get_config pri="250">parkpro_get_config</get_config>
+	</methods>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location>release/2.11/parkpro-2.11.0.3.tgz</location>
+	<md5sum>24e17f9ef733511884ee1f4a66360f3d</md5sum>
+</module>

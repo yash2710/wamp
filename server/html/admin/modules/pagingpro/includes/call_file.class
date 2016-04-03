@@ -1,0 +1,43 @@
+<?php
+class call_file {
+    private $spool; //Asterisk Spool Location
+    
+    function __construct($spool=NULL) {
+        if(empty($spool)) {
+            throw new Exception('Asterisk Spool Location Not Set');
+        }
+        if(!file_exists($spool.'/outgoing')) {
+            throw new Exception('Asterisk Spool Does Not Exist');
+        }
+        $this->spool = $spool.'/outgoing';
+    }
+    
+    /**
+     * undocumented function
+     * 
+     * @param id int Unique ID of Call File
+     * @param calldata array key,array list of call file data
+     * @param time int timestamp of file
+     * @return void
+     * @author Andrew Nagy
+     **/
+    function write($id,$calldata,$time=NULL) {
+        if(!isset($calldata['Channel'])) {
+            throw new Exception('Critical Call Data Missing');
+        }
+        $file = rand().'-'.$id.'.call';
+        $tmp = '';
+        foreach($calldata as $elements => $data) {
+            $tmp .= $elements.": ".$data."\n";
+        }
+        
+        $time = isset($time) & !empty($time) ? $time : time();
+        file_put_contents($this->spool.'/'.$file,$tmp);
+        touch($this->spool.'/'.$file, $time);
+        return $file;
+    }
+    
+    function delete($id) {
+
+    }
+}

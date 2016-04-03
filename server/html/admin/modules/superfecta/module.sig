@@ -1,0 +1,174 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+;################################################
+;#        FreePBX Module Signature File         #
+;################################################
+;# Do not alter the contents of this file!  If  #
+;# this file is tampered with, the module will  #
+;# fail validation and be marked as invalid!    #
+;################################################
+
+[config]
+version=1
+hash=sha256
+signedwith=86CE877469D2EAD9
+signedby=
+repo=extended
+[hashes]
+agi/phpagi-asmanager.php = f529d5f4d3cd109b96e0022a3b7b349b4f9a5a667f3bccb6c70aa08ebcb16efd
+agi/phpagi.php = 8a20f809ac74dfd7c88ca9eb2c15e54345c641639e807b7aff6758c258a513cb
+agi/superfecta.agi = f0626b0f9fa16e2a7378cfac3a30ad406365cdc59a0849debf719bbf7f6084db
+ajax.html.php = 28491891120b1d4a99b6c16f810af44bdf7638c9b7fbaab8f75085275d2aa460
+assets/images/bottom.gif = a21c02ee03f6c46b88ae0c0d733a1b82e370665a1971f766b75a780e92d0feaf
+assets/images/copy.gif = e3fb8fd1aafc38fa2fa719f5dd995781c500f6a807c8963cdac4857eb4ca5849
+assets/images/delete.gif = 7668b940466cbd22e84d277bc4fb050935173364a0af6a3aa23406b1c380e222
+assets/images/loading.gif = e3846a87ca641702ccad88c85d88d5beb11fab203dfa281bf91f18b6f5fe13ca
+assets/images/logo.gif = 747c6f4d5a1d3c4d23b98fef5e6e25c1d88faff322ddf4b52882da6d926a105a
+assets/images/off.gif = 1578e89de82305fb9d09e1f463ab2588c2740f6a4f61191537573a0d46984ac9
+assets/images/on.gif = aa45ac89f9e87298f7a0801acac3ebe8eeb91e47d8fc9615e650063a480a6000
+assets/images/on_off.gif = 51f6c6ad4a2a8db0b5c16e01ad8683a68c5ea2ae1c6654d5ac573fa0e4bd1e44
+assets/images/revert.gif = e7586a776cb299bcfc9af8e518104f0832d7eb766431c15cd0b1d268424c732a
+assets/images/top.gif = f2e1cef9894a9d0a4266159eb73fb41c2dfa6b99701ac1f338e9094748a53377
+assets/images/update.png = 4f0d748d250164ff23524614f09d0deea4dd234736b028fc77a1418c54bd70d0
+assets/js/jquery.form.js = c21c6c7a05598ffedb58da3541a46e3c8e5e42e4017430c42b4dd7cbb9efdba2
+callerid.html.php = 42d73dee61314c570d1bfe02250dfa4647c6b340e57dada3ebdd2002333c9f9a
+disclaimer.html = 6fe4bec61cddab3fe4ad68e3b6e1f1e435b08ca57fbf67c1f0678336c507582a
+functions.inc.php = 6f5a6f43f9e05bbfaa9548d4279405a84f315960746352e9e1b788e293cd1d65
+includes/ajax.inc = 436677de3d9c86311db80fa4e4e28dd56d2082c4778942d761f4cadb7b3f65a3
+includes/callerid.php = 8d0a759ef19d235da40775a67abbeecb6d0380d6b01636e72d3914373b7e1c20
+includes/config.php = 2071cf07d08abad85ed1a61af4fbc60d00371303b9b8c67fbfa3eae3d8b3d21f
+includes/JSON/JSON.php = a7573da0d70e95881f91882bd0e123468cb4be9afee812f2fdc771e481732449
+includes/oauth-php/example/client/googledocs.php = 1665b051cd85bfc21cf2b0181c88a6b88dfad03e616d34f4553666a97cf3846d
+includes/oauth-php/example/client/twolegged.php = 8fc0c6ac91f4dec95f667e53fe4c1cc5a7fc08df5ae35ab0435b23643db980f7
+includes/oauth-php/example/client/twoleggedtest.php = 2df4c6a0345b33a7408ac64dea8efe17b155c11b92a0e01966ca517df438faf0
+includes/oauth-php/example/client/twoleggedtwitter.php = 7acd845398f07e3e42c7142eb6b84ec2b918a9a4c124e173f4cb8104f28297f4
+includes/oauth-php/example/server/core/init.php = 6359e88f544f550d528d6c23d3953cf59b8c3164153a9ddd3d60f8af2aa64aa1
+includes/oauth-php/example/server/core/templates/inc/footer.tpl = 02ed54edc42fbbbc36988b2a184b67e49568be4807832538ba9b7edda53744d8
+includes/oauth-php/example/server/core/templates/inc/header.tpl = 9ea00d9f03475f503038edfa980c67a28767d74bab18645edd638b2d214e118c
+includes/oauth-php/example/server/core/templates/index.tpl = 9f737529f6659d942c50fbcd01d5b9e25a66b3edb3a07313ebe79d9b97383732
+includes/oauth-php/example/server/core/templates/logon.tpl = 065a5643fb0912ad3f83bbecabad3adfa8505f7b342608274d83d40659b8b265
+includes/oauth-php/example/server/core/templates/register.tpl = ff52dfaad115c0f57c28a1a5cd30af02a03deb856fb2b3cec38f438bad6da523
+includes/oauth-php/example/server/INSTALL = ad040cb19972d2738b0d32d193e7b1d2fb8dc14e85cd24937959c4c0aaa13b4d
+includes/oauth-php/example/server/www/hello.php = d176c2fccb1c41ea041ac9ea18b01c6004fa7175227c95e796b163e69ab9458e
+includes/oauth-php/example/server/www/index.php = 2f2788adf998d5f3c179afed8bfb08fb8cc21c165e0673474ee3959ef237b16b
+includes/oauth-php/example/server/www/logon.php = a25db271b3b13ea1759d72571abb00d58f3f45ea5965922357be0b7217329f07
+includes/oauth-php/example/server/www/oauth.php = bde8153540ebe972837e507c9cac4996b9a1e1fcc67d31eae1ab891ea509ce4e
+includes/oauth-php/example/server/www/register.php = c447af0ed5364d715d560998c39a00687f15365cee24280299f8c02df9dd419a
+includes/oauth-php/example/server/www/services.xrds.php = 18ba3fd1b6aba6d88d11ae49fa76d6ec603c18d449b17058e4e936eece3bf84a
+includes/oauth-php/library/body/OAuthBodyContentDisposition.php = 9a14cd4b36621ea6a0f574e147082527f47dfc1b8ed7cf9e73a0274f267f7369
+includes/oauth-php/library/body/OAuthBodyMultipartFormdata.php = 717a4700ae4b6a96a7a74252b977924fd11b8fb2afe5c308e0a2261c3ab8d5ce
+includes/oauth-php/library/discovery/xrds_parse.php = b5538b098516d780940a47d731f79176ea681da4cbdc7b8de2e99192f16a7d38
+includes/oauth-php/library/OAuthDiscovery.php = 8f85dc6cd2e10c49c0f9aa0669441802b32795332daddd50e158f0d688864dd0
+includes/oauth-php/library/OAuthException2.php = 2be81b853ee8787567659172a859fad098dd22b749037770777f314a4f681c41
+includes/oauth-php/library/OAuthRequester.php = 6c03a34659932bdd4c1908a834d538c86a4b6a4899be6e011aa46d40edbc0dd1
+includes/oauth-php/library/OAuthRequestLogger.php = 40898d039639e2a3bb3594ed285cb351acb7c4b25ba40960e5b003d795f58359
+includes/oauth-php/library/OAuthRequest.php = 0a64830d289264b4b1b39244781392624e3484874b41625769ccd74e7edc8331
+includes/oauth-php/library/OAuthRequestSigner.php = a3b9f296c82d61026a5a10a9806d52344e772de4c7e640254ff5ba8e8fc87c1d
+includes/oauth-php/library/OAuthRequestVerifier.php = 80def733a6112b2d0a125a16b38c0453316d2af5af57bef1594a0b0a59914f3d
+includes/oauth-php/library/OAuthServer.php = a00468ae2269421e6dccfcded8642d0ce57d963d1509ad7430c483b36a143a40
+includes/oauth-php/library/OAuthSession.php = 31f6d7d2113fadc8483bf4148006734b162991382c2233731d806e92dd3b61c5
+includes/oauth-php/library/OAuthStore.php = 834bf209dff6e574221944516aecf606e6d472f4c7da2ad0e4a606e3e5b373f9
+includes/oauth-php/library/session/OAuthSessionAbstract.class.php = c1bd6e6a52d5619f17fc0346e0b22f3d842a8d4f3c1a03f232db53ed5bb5667d
+includes/oauth-php/library/session/OAuthSessionSESSION.php = a8ee8ef196b4e5960695420712547ed8c293a2a9e0a8586ca648fcba44029e96
+includes/oauth-php/library/signature_method/OAuthSignatureMethod.class.php = 070706038e1a6cf856dd7afd20fa8a79b7718cd5aabeed54f27f902e5c4eefd6
+includes/oauth-php/library/signature_method/OAuthSignatureMethod_HMAC_SHA1.php = 7e67f19098c914b68416460a2dc79dd3a5f0c4979dd58da074bbcc61de6f14b1
+includes/oauth-php/library/signature_method/OAuthSignatureMethod_MD5.php = e2c3de9feb0a7f9f61e6b8e248b18baf1c6bbd86f655947e00595d47f1ce4b6a
+includes/oauth-php/library/signature_method/OAuthSignatureMethod_PLAINTEXT.php = 591da793db78df546b682a6117c7b32cd40711742c04cacb6cae61f9c2355e60
+includes/oauth-php/library/signature_method/OAuthSignatureMethod_RSA_SHA1.php = 2ea5f4f8e686b08f661bb11fdbb71b3f5c02cc1cfbddae814ef958b37ddd852a
+includes/oauth-php/library/store/mysql/install.php = ad53f81402e842c9e3f4009fd92a51a5cfcd5f3477ff0a6a846b390186bf6fe5
+includes/oauth-php/library/store/mysql/mysql.sql = d267023942e92c3f3ffe6016396f4a6c89416a8b8a90a87476da900f81bb877a
+includes/oauth-php/library/store/OAuthStore2Leg.php = 2ddbd261f5c14f4a542563b3667a06635300fb6f500a31574cb4f208f27dedf0
+includes/oauth-php/library/store/OAuthStoreAbstract.class.php = f449860344ddd8bff532e14ab625cc09af2585e77b4e55dc88fb45e2b5ed999d
+includes/oauth-php/library/store/OAuthStoreAnyMeta.php = cf93c1a2726e7eba5e7165e743e2c5a617cf80b6ffc7e822cac667a204f3ebc9
+includes/oauth-php/library/store/OAuthStoreMySQLi.php = ebdda5c6130ea83130bfe9d12da3422e858496fa4b42d14ae57869c79d08c7cc
+includes/oauth-php/library/store/OAuthStoreMySQL.php = 02cea8e20c8c0566a0febc73d3601e65383066ab8a16d0333198ac99cd539bb9
+includes/oauth-php/library/store/OAuthStoreOracle.php = 82c8a5412f525ee9cad934b57b4cc5f6493075357b8525a8054d25ae523a24a5
+includes/oauth-php/library/store/OAuthStorePDO.php = c34aa165da0c620aa0feffad5de9a456ead48cc1501e13e441778583f454f75f
+includes/oauth-php/library/store/OAuthStorePostgreSQL.php = 190fe7f89f77c4c1954b8bf40cc4c5b9c731539b93ec2c801a484dd4ad0d0a53
+includes/oauth-php/library/store/OAuthStoreSession.php = de7d73aea42d5d33f87d4c57131befb103022c3e5bba365da1ba07f9f2144f13
+includes/oauth-php/library/store/OAuthStoreSQL.php = b9d0a53050cf30133bac1e0e895ae5e7d99a00b5eedeab120f650837d5d4f9c4
+includes/oauth-php/library/store/oracle/install.php = d7becb71be789feca182ea3b25d444495a4048a1291da4e460b07161567a971c
+includes/oauth-php/library/store/oracle/OracleDB/1_Tables/TABLES.sql = cac4ca43ebe141fde96941317c925a0a59ca313d2d294cadd07bfdca162ecf13
+includes/oauth-php/library/store/oracle/OracleDB/2_Sequences/SEQUENCES.sql = 0c992c4522c2446ccba3bf4cef29ff3739ccb86bd48dec2772b8cd3621ef63a7
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_ADD_CONSUMER_REQUEST_TOKEN.prc = 89166b470e687e3d244b58f10dea2e51fb341ad6a705156c66091012f9790eae
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_ADD_LOG.prc = a802282bfab9dd81d130784161a2328d10fce3291e817cfff5088a6406a1d527
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_ADD_SERVER_TOKEN.prc = 3fb8e61fe3745257ceaaa39932c3f78472bed24bd8b8cbc5320be4c3d174c828
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_AUTH_CONSUMER_REQ_TOKEN.prc = ec145263310d22e73ba8a84a91f1b489a02a4087bf9553d98526722a57331ff5
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_CHECK_SERVER_NONCE.prc = c6b0503e26034f45729b1a7593e2ccfb1820209864dbebcfb833407da56b2434
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_CONSUMER_STATIC_SAVE.prc = ba41496112c1022f2d872cc62ba18f3c3f9deb4ba5a5b70f3a8256c00b95f465
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_COUNT_CONSUMER_ACCESS_TOKEN.prc = bf6b3ce8cdc96f66d0eccc89124971bee24b37cc804ad0687d48537a78e70045
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_COUNT_SERVICE_TOKENS.prc = 640469496a664f3541ce5a6b3863d30898db7ecf0bb2207e097a8e91b97ecaf5
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_DEL_CONSUMER_ACCESS_TOKEN.prc = af86798d798e765414b8c66fd2cbb844467b7512b989fb443eee38b496cbc298
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_DEL_CONSUMER_REQUEST_TOKEN.prc = 36b34c8c5499ea5926b6a0d8573f0e819544e45aa21c30eca3f56a82f5028d6a
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_DELETE_CONSUMER.prc = 3483e310972736ef201317fe1bf8fb5ed41fe79fb46fc7680c270f3615abc837
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_DELETE_SERVER.prc = 34eeb42b8032fa6eeeb596c60f4a794c1932e86c66f7d5bd9fc07cabaef42e08
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_DELETE_SERVER_TOKEN.prc = 25becf785232a706f9c256a41f4d9d220d42cf276848e0224843e6996aefed7e
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_EXCH_CONS_REQ_FOR_ACC_TOKEN.prc = e3938eeb293cafad89236b643a365353115ee3f236399601706a94039911a6a2
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_CONSUMER_ACCESS_TOKEN.prc = 4f4cde6e48d28e979d373b34a6903c49bc1fe0ad29f471e412cc5587b5824c2a
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_CONSUMER.prc = 85f5b6ae2963e8a35a08adc0a8ec1f03f0d547a0c70b11d8a30db52eee7e536c
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_CONSUMER_REQUEST_TOKEN.prc = 5ad1bde02c2af0edab1d4717879850de8d69caeb44a30ec935a0fff0881f0653
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_CONSUMER_STATIC_SELECT.prc = 92f81634ad193588d977366648940c848fd2df560d0d34979a66fafb3af8bf74
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SECRETS_FOR_SIGNATURE.prc = da7bce9045f70e30542e9e3dacfb88fb76e240f081c84fe5a24ffd77997c3a05
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SECRETS_FOR_VERIFY.prc = eafd2adde1a3ebb82bbd9fbbabc668aed21845ffb85b728f00f47ffd8db65a7e
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SERVER_FOR_URI.prc = f45dcaea24d3a5f20f1367a53e63bce586058779acfc1d7a9321d828da5aa2c3
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SERVER.prc = 57cdbfa52083c80931ad840360a94e369fbd2980712ffd48ed606888a9a64b1a
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SERVER_TOKEN.prc = e78a5e3d7cd8e6cbf89b1a47dfa53dafb6a2a5d790284c730f5eaf04b0977e3f
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_GET_SERVER_TOKEN_SECRETS.prc = e1eff5f0c1e5a59ebfe7f2496c869b612c43870f799293a60495776dc7b4574b
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_LIST_CONSUMERS.prc = 974083a2da002884fec0da6f3ba314ee0c82e5e89d56683c7d3882b4851431a6
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_LIST_CONSUMER_TOKENS.prc = 18317b2205ab737383f76c30ed417c40fdf0d69f8314f4a31dde3c6bf0881086
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_LIST_LOG.prc = ab3d6fba3469327a21dc09e88911956a186c6f5433d8018aee5b3ee547e72732
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_LIST_SERVERS.prc = 4f1aa6c8caa113777c7ffee728352c389d50fa6f71c2d514f7c6b3b2acb5d5c5
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_LIST_SERVER_TOKENS.prc = 1629b2e227b7d61101d27ecef90098fed68d3b73cd6facc1d7322e8efdbd5cf1
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_SET_CONSUMER_ACC_TOKEN_TTL.prc = 33e56277c514f5698faf65303152a4e86e052cadcdf62e089f95e40bc1850999
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_SET_SERVER_TOKEN_TTL.prc = cd06b07ebe13d3cf6467af51de08ab0b96e2474e3c82998c602458ea16871407
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_UPDATE_CONSUMER.prc = 7395e62d2c3b2b2f5bd2fd6bf91e0c619f703fba332ed9d141cbf9889d2a1797
+includes/oauth-php/library/store/oracle/OracleDB/3_Procedures/SP_UPDATE_SERVER.prc = 27c02b7b200790ba214c4e6c26bee4aa50515d68b7faafe6d14e59cfdd61d631
+includes/oauth-php/library/store/postgresql/pgsql.sql = f9d862351143b861af6cd79b2fad0db1c23e938f1d2dd5442f0496004ed98150
+includes/oauth-php/LICENSE = 6e405d759d334894e17fce64e4cbfe4e62b2240a3ce017a93099fc179f76bfe8
+includes/oauth-php/README = 507f9d505bcd31b2a2a4798fadeec83a81f9ab09db39303bd03dca682ec61fbf
+includes/oauth-php/test/discovery/xrds-fireeagle.xrds = 04708fb9ae84a52eddc39c7140bd4933d39c0f0fdcfa2a3dd152919be823423c
+includes/oauth-php/test/discovery/xrds-getsatisfaction.xrds = 2d918f2a303d5443663c73a8fe5ade50442cd34d9889b38c5c19f9cc944324da
+includes/oauth-php/test/discovery/xrds-magnolia.xrds = 74f851dbdb150261e6a1e20af201b349b3152e22444036816f609c76a49ff7e5
+includes/oauth-php/test/oauth_test.php = 44c5b5d5240c00641cf0cf4e3fd153c364946f4b8b079df08857d4cf48e3fc89
+includes/pear/Net/Growl/Application.php = e28203ab039a6cc5d9ff654b14d759ac44f8337faa5f3994daff5989191ff18b
+includes/pear/Net/Growl/Autoload.php = 56043917792f98ab2e85435cb69f5712c7465cdd71df5a0cd5b39adb8fcfb3d6
+includes/pear/Net/Growl/Exception.php = 8936e188cf1f425023b76961b2ca0dd2135a2223723c906bc262dd51b25f499d
+includes/pear/Net/Growl/GntpMock.php = 561b4f2a5945a516f869c8cd4e64aaf05227937972146f48ee57d1592ceca047
+includes/pear/Net/Growl/Gntp.php = add05bee4d734f5ae2d591ba2d7dae6e747e975d85c70154e3841dcb6b74ebec
+includes/pear/Net/Growl/Response.php = d2c8a55b3d195b34dc0fe74241318295de9ad697722cf180a5f0c6f77045ca55
+includes/pear/Net/Growl/Udp.php = 6b685243a5703d48ec5785dbdb3a5d041153a9c7becedc26b04a6dfde3f50495
+includes/pear/Net/Growl.php = d22e6ba51f56bd698d5f75e7013f127c0c9aeb24370135d712079d4dbacf82a9
+includes/processors/superfecta_multi.php = 8ec9211435a02ad0316626a1be3cda03f0e53c523d7956cb47a12181628aaf1c
+includes/processors/superfecta_single.php = cbf43275273cbd6d2b327b787c609dfc95259ebfe31810a78b9385a8d776c553
+includes/rain.tpl.class.php = e1fa961611e96aff12d537e32272c8a9a25890f107b813973dd722615a6afed4
+includes/superfecta_base.php = 2c248e4088142027d60eabd76ffb871e041ce019741291ea39d1872d0d7539ca
+install.php = 182e6e5afe2093c1ba0a3412f8f024435fd57598b2b50e2ab4b87421d0ac98a6
+LICENSE = 8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643
+module.xml = 8ce7a316a5efc4af4d83eda1c509e83d4591b946ddc676faadee5cfcbef01ab5
+page.superfecta.php = bdde75e92617ece93429b3d9c7fcf88a63cec37c4c776fd934c8e44f9dc507ed
+sources.php = 9fc3ba0714e544b2ecaaa6c50bf84bee3b88e0869789bd0922b6a3c08d3dd524
+uninstall.php = 0a35030eb87057b3c5f5edb7389cf674bdbacd149c788e8f6680d31ccacd5fd9
+views/footer.html = 0585e83187145688741a31dc2a0514930bfe7e989d7df7375c554737b2b11ac3
+views/header.html = 5092f6d1aedd2e8fb9460ad40e798cc35c487043db5047cce4923fed024181b5
+views/main.html = e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+views/sources.html = fd4ecbc2baff1c34ef971a3a53fdf2188598d845a2241a8c6ace52189cb7c9ce
+views/style.css = e00d61c62bd35c5231600420b153218596320171113ea6319bb20cb97cb86a00
+;# End
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v2.0.14 (GNU/Linux)
+
+iQIcBAEBAgAGBQJUZUnJAAoJEIbOh3Rp0urZdqUQALfev4oQmOMAEBd3EJWykhjf
+IbOK0RwvBBEJ9RY3YHjd2IZoFbafnNM9j+RNUs3IO9utzYTDBDpqSVS+rREZb8O/
+6jyRybcndebirjERkFOCm+mP+VUMPJ9Panm39/61Rc3NdIIz+YTgDa9BbRF2pMrG
+2foRRXwcVk9CIVJW+6lklG9os51SA4S1DetG2iU04kmNmfp+NdP7TjlZwGZvP3M9
+e9Pz0xBpZMHAnB6oqbOjYcQGR2Oxhsnpm3H6qUOR7KPeI+QOa9oXHA/QB7RuSIAC
+GpnNl+9YR1a+vBUlJAnEvdNJ/OXsI7UNxR+R6TetsR8u/jzVh2tXGUHUUn1stwK3
+DePV+MKHF+nqJZmq4iQH/fluvh72/pdcyeAsW5+jcKLOjlYBvs6FGVfnnYAudL6D
+Xk2DXGMNJDWF5CSf6DnfVLbrf8wiR6n3aIs7HFlKQYblk+YWDk8xgIYRjdyeF2mL
+g9p6C4bd34Jjta7IQtQeVcwJ7wUQ+Dra2TH+U//Q8KDYddA3oyty3IP4Bh6X1pcQ
+p2I4CG9McplC4mchi0t4TW1A+sR3bmgQgZ1HqW9VeE6k4avxlgVWPUrwzjCeLGgz
+ssxnmFqlgupkGoNVEMzFVAmkkR6rtTin3MUXCbrtMTx1LT6OatKixYx6sjnGF1Z0
+T8CFyvLrvAmN/QmUUzbZ
+=xVts
+-----END PGP SIGNATURE-----

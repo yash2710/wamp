@@ -1,0 +1,40 @@
+<module>
+	<rawname>recording_report</rawname>
+	<name>Call Recording Report</name>
+	<version>2.11.0.9</version>
+	<repo>commercial</repo>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<type>tool</type>
+	<category>Reports</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php - Displays various information related to the voicemail system. This is a non standard module and requies a license for it to work</description>
+	<commercial>
+		<type>paid</type>
+	        <link>//www.schmoozecom.com/call-recording-reports.php</link>
+        </commercial>
+	<changelog>
+		*2.11.0.9* Sales cleanup
+		*2.11.0.6* #7266
+		*2.11.0.3* Fix missing play.png img
+		*2.11.0.2* Fix issue where correct files were being archived not saved
+		*2.11.0.1* Packaging of ver 2.11.0.1
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.32* Resolve view issues
+	</changelog>
+	<depends>
+		<version>2.10</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>recordings</module>
+	</depends>
+	<menuitems>
+		<recording_report>Call Recordings</recording_report>
+	</menuitems>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<location>release/2.11/recording_report-2.11.0.3.tgz</location>
+	<md5sum>1c1638661bc2b07304cb9448f58efe7d</md5sum>
+</module>

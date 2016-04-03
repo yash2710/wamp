@@ -1,0 +1,5 @@
+[pcs]
+name=Pacemaker Updates
+mirrorlist=http://mirrorlist.centos.org/?release=6.5&arch=$basearch&repo=updates
+enabled=0
+

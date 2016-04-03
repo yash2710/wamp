@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<title>CSS Classes</title>
+		<style>
+			.colortext{
+				position: relative;
+				text-align: center;
+				color: red;
+				font-style: italic;
+				font-family: cursive;
+				-webkit-animation: example 10s linear 1s infinite;
+				animation: example 10s linear 1s infinite;
+			}
+			.styletext{
+				color: mediumaquamarine;
+				text-align: left;	
+			}
+			@-webkit-keyframes example{
+				0% {left: 0px; transform: rotate(180deg); window.scrollTo(0,document.body.scrollHeight);}
+				25% {left: 500px; transform: rotate(360deg); window.scrollTo(0,document.body.scrollHeight);}
+				75% {left: -500px; transform: rotate(0deg); window.scrollTo(0,document.body.scrollHeight);}
+				100% {left: 0px; transform: rotate(180deg); window.scrollTo(0,document.body.scrollHeight);}
+			}
+			@keyframes example{
+				0% {left: 0px; transform: rotate(180deg); }
+				25% {left: 500px; transform: rotate(360deg);}
+				75% {left: -500px; transform: rotate(0deg); }
+				100% {left: 0px; transform: rotate(180deg); }
+			}
+			
+			.colortext1{
+				position: relative;
+				text-align: center;
+				color: red;
+				font-style: italic;
+				font-family: cursive;
+				-webkit-animation: example1 10s linear 1s infinite;
+				animation: example1 10s linear 1s infinite;
+			}
+			@-webkit-keyframes example1{
+				0% {left: 0px; transform: rotate(180deg);}
+				25% {left: 500px; transform: rotate(0deg);}
+				75% {left: -500px; transform: rotate(360deg);}
+				100% {left: 0px; transform: rotate(180deg);}
+			}
+			@keyframes example1{
+				0% {left: 0px; transform: rotate(180deg);}
+				25% {left: 500px; transform: rotate(0deg);}
+				75% {left: -500px; transform: rotate(360deg);}
+				100% {left: 0px; transform: rotate(180deg);}
+			}
+			div{
+				width: 50px;
+				height: 50px;
+				position: relative;
+				background-color: red;
+				-webkit-animation: example2 linear 5s infinite alternate;
+				animation: example2 linear 5s infinite alternate;
+				border: 10px dotted red;
+				outline: purple groove thin;
+			}
+			@-webkit-keyframes example2{
+				0% {left: 0%; transform: rotate(0deg); background-color: chocolate; border-radius: 0%; border: 5px dotted black;}
+				25% {left: 25%; transform: rotate(180deg); background-color: blueviolet; border-radius: 25%; border: 2px dotted black;}
+				45% {left: 45%; transform: rotate(360deg); background-color: red; border-radius: 50%; border: 0px;}
+				50% {left: 50%; transform: rotate(360deg); background-color: red; border-radius: 100%; border: 0px;}
+				55% {left: 55%; transform: rotate(360deg); background-color: red; border-radius: 50%; border: 2px dashed yellow;}
+				75% {left: 75%; transform: rotate(540deg); background-color: blueviolet; border-radius: 25%; border: 5px dashed green;}
+				100% {left: 100%; transform: rotate(720deg); background-color: chocolate; border-radius: 0%; border: 10px dashed green;}
+			}
+			@keyframes example2{
+				0% {left: 0%; transform: rotate(0deg); background-color: chocolate; border-radius: 0%; border: 5px dotted black;}
+				25% {left: 25%; transform: rotate(180deg); background-color: blueviolet; border-radius: 25%; border: 2px dotted black;}
+				45% {left: 45%; transform: rotate(360deg); background-color: red; border-radius: 50%; border: 0px;}
+				50% {left: 50%; transform: rotate(360deg); background-color: red; border-radius: 100%; border: 2px dashed yellow;}
+				55% {left: 55%; transform: rotate(360deg); background-color: red; border-radius: 50%; border: 5px dashed green;}
+				75% {left: 75%; transform: rotate(540deg); background-color: blueviolet; border-radius: 25%; border: 10px dashed green;}
+				100% {left: 100%; transform: rotate(720deg); background-color: chocolate; border-radius: 0%; border: 10px dashed green;}			}
+			
+			/*@-webkit-keyframes example2{
+				0% {border-radius: 0%;}
+				25% {border-radius: 25%;}
+				45% {border-radius: 50%;}
+				50% {border-radius: 100%;}
+				55% {border-radius: 50%;}
+				75% {border-radius: 25%;}
+				100% {border-radius: 0%;}
+			}
+			@keyframes example2{
+				0% {border-radius: 0%;}
+				25% { border-radius: 25%;}
+				45% { border-radius: 50%;}
+				50% { border-radius: 100%;}
+				55% { border-radius: 50%;}
+				75% { border-radius: 25%;}
+				100% {border-radius: 0%;}
+			}*/
+		</style>
+	</head>
+	<body>
+		<h1 class="styletext">This is a heading</h1>
+		<p class="styletext">This is a paragraph</p>
+		<p class="colortext">This is another paragraph</p>
+		<p class="colortext1">This is also a paragraph</p>
+		<div></div>
+	</body>
+</html>

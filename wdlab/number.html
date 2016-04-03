@@ -1,0 +1,153 @@
+<html>
+	<body>
+		<script>
+			var a = prompt("Enter a number");
+			var b = parseInt(a);
+			document.write(a+"<br>"); 	
+			var n = 0;
+			while(b!=0){
+				n = n*10 + b%10;
+				b=parseInt(b/10);
+				if(b==0)
+					break;
+			}
+			var number = "";
+			var i;
+			for(i=a.length;i>0;i--){
+				
+				switch(i){
+					case(2):
+					case(5):
+					case(7):
+					case(9):
+						number+=" ";
+						var j = n%10;
+						switch(j){
+								case(1):
+								n=parseInt(n/10);
+								var j = n%10;
+								switch(j){
+									case 0: number+="ten";
+										break;
+									case 1: number+="eleven";
+										break;
+									case 2: number+="twelve";
+										break;
+									case 3: number+="thirteen";
+										break;
+									case 4: number+="fourteen";
+										break;
+									case 5: number+="fifteen";
+										break;
+									case 6: number+="sixteen";
+										break;
+									case 7: number+="seventeen";
+										break;
+									case 8: number+="eighteen";
+										break;
+									case 9: number+="nineteen";
+										break;		
+								}
+								number+=" ";
+								switch(i){
+									case(5): number+="thousand";
+										break;
+									case(7): number+="lac";
+										break;
+									case(9): number+="crore";
+										break;
+								}
+								break;
+								n=parseInt(n/10);
+								i--;
+								break;
+								case(2): number+="twenty";
+								break;
+								case(3): number+="thirty";
+								break;
+								case(4): number+="forty";
+								break;
+								case(5): number+="fifty";
+								break;
+								case(6): number+="sixty";
+								break;
+								case(7): number+="seventy";
+								break;
+								case(8): number+="eighty";
+								break;
+								case(9): number+="ninety";
+								break;
+						}
+						number+=" ";
+						if(n%10 == 0 && n!=0)
+						switch(i){
+							case(10):
+							case(3): number+="hundred";
+								break;
+							case(11):
+							case(12):
+							case(4): 
+							case(5): number+="thousand";
+								break;
+							case(6):
+							case(7): number+="lac";
+								break;
+							case(8):
+							case(9): number+="crore";
+								break;
+						}
+						break;
+					default:
+						var j = n%10;
+						number+=" ";
+						switch(j){
+								case(1): number+="one";
+								break;
+								case(2): number+="two";
+								break;
+								case(3): number+="three";
+								break;
+								case(4): number+="four";
+								break;
+								case(5): number+="five";
+								break;
+								case(6): number+="six";
+								break;
+								case(7): number+="seven";
+								break;
+								case(8): number+="eight";
+								break;
+								case(9): number+="nine";
+								break;
+								case(0):
+									if(a.length == 1)
+										number+="zero";
+								break;
+						}
+						number+=" ";
+						if(n%10 != 0)
+						switch(i){
+							case(10):
+							case(3): number+="hundred";
+								break;
+							case(11):
+							case(12):
+							case(4): 
+							case(5): number+="thousand";
+								break;
+							case(6):
+							case(7): number+="lac";
+								break;
+							case(8):
+							case(9): number+="crore";
+								break;
+						}
+						break;
+					
+				}
+				n=parseInt(n/10);
+			}
+			document.write(number);
+		</script>
+	</body>
+</html>

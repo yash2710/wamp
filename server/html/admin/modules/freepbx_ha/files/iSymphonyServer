@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# chkconfig: - 94 04
+# description: Server Startup Script.
+#
+# Updated 2009-08-03 to accomodate upgrades
+### 
+###
+# Configure JAVA_HOME here or in your environment
+# JAVA_HOME="/usr/java/latest"
+
+. /etc/init.d/functions
+
+BASENAME=`basename ${0}`
+FRIENDLYBASENAME=`basename ${0} | sed s/^[K\|S][0-9]*//`
+LCNAME=`echo ${BASENAME} | tr '[A-Z]' '[a-z]' | sed s/server// | sed s/^[s\|k][0-9]*//`
+LOCATION="/opt/${LCNAME}/server/";
+LAUNCHNAME="${LOCATION}/${BASENAME}.sh"
+echo $BASENAME	
+function start {
+    cd $LOCATION
+	
+	status -p /opt/isymphony/server/iSymphonyServer.pid iSymphonyServer
+	[ $? == 0 ] && return 0;
+
+	USER=$(ls -l ${LOCATION} | grep startup.sh | awk '{print $3}')
+	daemon --user=${USER} ${LOCATION}/startup.sh
+	sleep 1; 
+	touch /var/lock/subsys/${FRIENDLYBASENAME}
+}
+
+function stop {
+        cd $LOCATION
+	rm -f /var/lock/subsys/${FRIENDLYBASENAME}
+
+	status -p /opt/isymphony/server/iSymphonyServer.pid iSymphonyServer
+	if [ $? == 3 ]; then 
+	       # Check to make sure it's REALLY dead.
+	       PID=`ps auxw | grep "java -Djava.library.path=lib -jar iSymphonyServer.jar" | grep -v grep | awk ' { print $2 }'`
+       	       [ -z "$PID" ] && return 0
+	       # There's still one hanging around. You're dead.
+	       kill -9 $PID
+	       sleep 1
+	       return 0
+        fi
+
+        ./shutdown.sh
+}
+
+case "$1" in
+	start)
+		start
+	;;
+	stop)
+		stop
+	;;
+	restart)
+        	stop
+		start	
+	;;
+	status)
+		status -p /opt/isymphony/server/iSymphonyServer.pid iSymphonyServer
+	;;
+	*)
+		echo "Usage: ${0} {start|stop|restart|status}"
+	;;
+esac
+

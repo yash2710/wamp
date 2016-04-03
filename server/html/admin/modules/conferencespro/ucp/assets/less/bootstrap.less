@@ -1,0 +1,219 @@
+#module-page-conferencespro {
+  .conference-room {
+      background-color: aliceblue;
+      border-radius: 2px;
+      .banner {
+        .inviteAction {
+          position: absolute;
+          padding: 1px 5px 1px;
+          border: 1px solid transparent;
+          .fa-plus {
+            font-size: 85%;
+            margin-right: 2px;
+          }
+        }
+        .message {
+          position: absolute;
+          width: 100%;
+        }
+      }
+      .statuses {
+          width: 100%;
+          .status {
+              text-align: center;
+          }
+          #lock {
+              .fa {
+                  cursor: pointer;
+              }
+              i:hover  {
+                  color: lightgrey;
+              }
+              i:hover.fa-unlock:before {
+                  content: "\f023";
+              }
+              i:hover.fa-lock:before {
+                  content: "\f09c";
+              }
+              i:active  {
+                  color: black;
+              }
+          }
+      }
+      .conference {
+          border: 1px solid rgb(163, 211, 255);
+          border-radius: 5px;
+          margin-bottom: 10px;
+          background-color: rgb(216, 236, 253);
+          min-height: 100px;
+          padding: 5px;
+          .message {
+            font-weight: bold;
+            display: none;
+          }
+          .user {
+              cursor: default;
+          }
+          .fa-stack {
+              font-size: 120%;
+          }
+          i.mute {
+              opacity: 0;
+              color: red;
+              cursor: pointer;
+          }
+          .mute:hover {
+              opacity: 100;
+          }
+          i.muted {
+              opacity: 100;
+          }
+          i.kick {
+              cursor: pointer;
+          }
+          .kick:hover {
+              color: red;
+          }
+      }
+      .conference-no-data {
+          text-align: center;
+      }
+      .legend {
+          margin-bottom: 5px;
+          span.outter{
+              border: 1px solid lightgrey;
+              border-radius: 3px;
+              padding: 1px;
+              margin-right: 5px;
+              white-space: normal;
+              span.inner {
+                  white-space: nowrap;
+              }
+              i {
+                  padding: 2px;
+              }
+              i.admin {
+                  background-color: lightcoral;
+              }
+              i.normal {
+                  background-color: transparent;
+              }
+              i.muted {
+                  background-color: orange;
+              }
+              i.wmarked {
+                  background-color: lime;
+              }
+              i.marked {
+                  background-color: orchid;
+              }
+          }
+      }
+  }
+  .user {
+      i {
+          padding: 2px;
+      }
+      i.admin {
+          background-color: lightcoral;
+      }
+      i.normal {
+          background-color: transparent;
+      }
+      i.muted {
+          background-color: orange;
+      }
+      i.wmarked {
+          background-color: lime;
+      }
+      i.marked {
+          background-color: orchid;
+      }
+  }
+  .conferencesettings {
+      background-color: aliceblue;
+      border-radius: 10px;
+      padding: 10px;
+      width: 370px;
+      @media only screen and (max-width : 991px) {
+          width: 100%;
+      }
+  }
+  .separator-list {
+      height: 15px;
+  }
+  .settings-list {
+      background-color: aliceblue;
+  }
+  .settings.active {
+      background-color: #428bca;
+      border-radius: 2px;
+      a {
+          color: #ffffff;
+      }
+      a:hover {
+          text-decoration: none;
+          background-color: #428bca;
+          color: #ffffff;
+      }
+  }
+  .settings-inner {
+      i {
+  		font-size: 120%;
+  		color: #999999;
+  		float: right;
+  		margin-top: 1px;
+      }
+  }
+  .settings {
+      a {
+          position: relative;
+          display: block;
+          padding: 3px 8px;
+          border-radius: 2px;
+      }
+      a:hover {
+          text-decoration: none;
+          background-color: #eeeeee;
+          color: #2a6496;
+      }
+  }
+  .folder {
+      margin-bottom: 1px;
+      font-size: 85%;
+      .badge {
+          float:right;
+      }
+      a {
+          position: relative;
+          display: block;
+          padding: 3px 8px;
+          border-radius: 2px;
+      }
+      a:hover {
+          text-decoration: none;
+          background-color: #eeeeee;
+          color: #2a6496;
+      }
+  }
+  .folder.active {
+      background-color: #428bca;
+      border-radius: 2px;
+      a {
+          color: #ffffff;
+      }
+      a:hover {
+          text-decoration: none;
+          background-color: #428bca;
+          color: #ffffff;
+      }
+  }
+  .mailbox-header {
+      font-size:400%;
+  }
+  .hover {
+      text-decoration: none;
+      background-color: #eeeeee;
+      color: #2a6496;
+  }
+}

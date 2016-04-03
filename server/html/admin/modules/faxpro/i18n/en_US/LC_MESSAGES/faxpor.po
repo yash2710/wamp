@@ -1,0 +1,244 @@
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language template for faxpro
+# Copyright (C) 2008, 2009, 2010 Bandwith.com
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-02 08:50-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Fax Configuration Professional"
+msgstr ""
+
+msgid "Basic"
+msgstr ""
+
+msgid "Extends the fax module with profesional options"
+msgstr ""
+
+msgid "Fax"
+msgstr ""
+
+msgid "Store Localy"
+msgstr ""
+
+msgid ""
+"Chose this option to have faxes stored by the server; accesable via the ARI."
+msgstr ""
+
+msgid "Outgoing Station ID"
+msgstr ""
+
+msgid "The outgoing Fax Machine Identifier. This is usualy your fax number."
+msgstr ""
+
+msgid "Outgoing Header"
+msgstr ""
+
+msgid ""
+"The outgoing Fax Machine Headers. This usualy contains the name of the "
+"person or entity sending the fax."
+msgstr ""
+
+msgid "Coversheet Name"
+msgstr ""
+
+msgid "The name that should appear on the outbound coversheet."
+msgstr ""
+
+msgid "Coversheet Tel"
+msgstr ""
+
+msgid "The Phonenumber that will appear on the cover sheet."
+msgstr ""
+
+msgid "Coversheet Email"
+msgstr ""
+
+msgid "The email address that will appear on the coversheet."
+msgstr ""
+
+msgid "Fax Licenses"
+msgstr ""
+
+msgid "License number"
+msgstr ""
+
+msgid "Concurrent Faxes"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Fax Cover Page Options"
+msgstr ""
+
+msgid "ERROR:"
+msgstr ""
+
+msgid "Company Logo"
+msgstr ""
+
+msgid "Company Logo. Filetype MUST be JPG"
+msgstr ""
+
+msgid "Company Name"
+msgstr ""
+
+msgid "Company Address 1"
+msgstr ""
+
+msgid "Company Address 2"
+msgstr ""
+
+msgid "Company Address 3"
+msgstr ""
+
+msgid "Company Phone"
+msgstr ""
+
+msgid "Company Web Site"
+msgstr ""
+
+msgid "Company Footer"
+msgstr ""
+
+msgid "This text will appear at the bottom of every outbound fax."
+msgstr ""
+
+msgid "Local Storage Options"
+msgstr ""
+
+msgid "Max Pages"
+msgstr ""
+
+msgid "The maximum amount of pages a user is allowed to store localy."
+msgstr ""
+
+msgid "Excess Faxes"
+msgstr ""
+
+msgid ""
+"How the system should respond when a new fax arrives for a user whos quota "
+"is full.<ul><li>Reject: Reject the new fax and dissconect the call</"
+"li><li>Delete Oldest: Delete as many faxes as nesesary to accommodate the "
+"incoming fax, starting from the oldest.</li></ul>With either option, a fax "
+"larger that the quota will be deleted after it was recived."
+msgstr ""
+
+msgid "Fax Options"
+msgstr ""
+
+msgid "Fax Presentation Options"
+msgstr ""
+
+msgid "Default Fax header"
+msgstr ""
+
+msgid ""
+"Header information that is passed to remote side of the fax transmission and "
+"is printed on top of every page."
+msgstr ""
+
+msgid "Default Local Station Identifier"
+msgstr ""
+
+msgid ""
+"Text string that identifies the sender identification to the remote side of "
+"the fax transmission."
+msgstr ""
+
+msgid "Outgoing Email address:"
+msgstr ""
+
+msgid ""
+"Email address that faxes appear to come from if 'system default' has been "
+"chosen as the default fax extension."
+msgstr ""
+
+msgid "Fax Transport Options"
+msgstr ""
+
+msgid "Error Correction Mode"
+msgstr ""
+
+msgid ""
+"Error Correction Mode (ECM) option is used to specify whether\n"
+"\t\t\t\t to use ecm mode or not."
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "Maximum transfer rate"
+msgstr ""
+
+msgid "Maximum transfer rate used during fax rate negotiation."
+msgstr ""
+
+msgid "Minimum transfer rate"
+msgstr ""
+
+msgid "Minimum transfer rate used during fax rate negotiation."
+msgstr ""
+
+msgid "Modem"
+msgstr ""
+
+msgid "Modem Type."
+msgstr ""
+
+msgid "Fax Recive Options"
+msgstr ""
+
+msgid "Default fax instance:"
+msgstr ""
+
+msgid ""
+"Select 'system default' to have the system act as a fax instance and receive "
+"and faxes. You can then route faxes to this instance and avoid having to "
+"route faxes to an instance accociated with a specific entity. This can be "
+"the system using Asterik's internal capabilites or it can be an external "
+"extesnion, such as a physical fax machine"
+msgstr ""
+
+msgid "disabled"
+msgstr ""
+
+msgid "system default"
+msgstr ""
+
+msgid "Default Recipent Email address:"
+msgstr ""
+
+msgid ""
+"Email address used if 'system default' has been chosen as the default fax "
+"extension."
+msgstr ""
+
+msgid "Submit"
+msgstr ""

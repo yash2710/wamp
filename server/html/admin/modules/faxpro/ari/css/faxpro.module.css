@@ -1,0 +1,79 @@
+/** send fax **/
+textarea[name=tomsg] {
+	width: 250px;
+}
+#showmydeets, .add_file, .del_row, .pdfimg, .forward, .trashimg {
+	cursor:pointer;
+}
+
+/**report**/
+.mycoveroptstr, .coveroptstr {
+	display: none;
+}
+
+table.fax{
+	border: 1px solid #89BF81;
+	border-collapse:collapse;
+	border-spacing:0;
+	margin:0 0 16px;
+	width: 100%;
+}
+table.fax th{
+	background-color:#9DD29C;
+	border-color:#89BF81;
+	border-style:solid;
+	border-width:1px 1px 2px;
+	color:#404040;
+	font-family:Verdana;
+	font-size:0.7em;
+	font-weight:bold;
+	text-align:center;
+}
+table.fax td{
+	background-color:white;
+	border:1px solid #89BF81;
+	color:#404040;
+	font-family:Verdana,sans-serif,Arial;
+	font-size:0.7em;
+	padding:3px;
+	text-align:center;
+}
+.new{
+	font-weight: bold;
+}
+.notify{
+	background-color:#89BF81;
+	display:table;
+	margin:auto;
+	padding:10px 15px;
+}
+.pdfimg{
+	display:block;
+	background: transparent url("/admin/modules/faxpro/assets/images/pdf.gif") center center no-repeat;
+	height: 17px;
+	text-indent:-999em;
+	background-size: 16px;
+}
+.forward{
+	display:block;
+	background: transparent url("/admin/modules/faxpro/assets/images/forward.png") center center no-repeat;
+	height: 17px;
+	text-indent:-999em;
+	background-size: 16px;
+	cursor: pointer;
+}
+.trashimg{
+	display:block;
+	background: transparent url("/admin/images/trash.png") center center no-repeat;
+	height: 17px;
+	text-indent:-999em;
+}
+#maxquota{
+	width:900px;
+	font-family:Verdana,sans-serif,Arial;
+	font-size:0.7em
+}
+
+.notify {
+	border-radius: 10px;
+}

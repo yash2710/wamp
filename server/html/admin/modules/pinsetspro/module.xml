@@ -1,0 +1,45 @@
+<module>
+	<rawname>pinsetspro</rawname>
+	<name>Pinsets Pro</name>
+	<version>2.11.0.11</version>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Reports</category>
+	<repo>commercial</repo>
+	<changelog>
+		*2.11.0.11* FREEPBX-8478 - fix incorrect splice causing incorrect dialplan
+		*2.11.0.9* FREEPBX-7908 Readjust priorities
+		*2.11.0.8* Sales cleanup
+		*2.11.0.5* Add sales information
+		*2.11.0.4* Packaging of ver 2.11.0.4
+		*2.11.0.3* Packaging of ver 2.11.0.3
+		*2.11.0.2* Packaging of ver 2.11.0.2
+		*2.11.0.1* Bump for 2.11
+		*2.10.0.25* Packaging of ver 2.10.0.25
+	</changelog>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php Provides reports on calls based on the account code used</description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/pinsetpro.php</link>
+	</commercial>
+	<depends>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>framework ge 2.10.5</module>
+		<module>core</module>
+		<module>pinsets ge 2.11.0.9</module>
+	</depends>
+	<methods>
+		<get_config pri="750">pinsetspro_hook_pinsets_get_config</get_config>
+	</methods>
+	<menuitems>
+		<pinset_report>Pinsets Code Reports</pinset_report>
+	</menuitems>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<location>release/2.11/pinsetspro-2.11.0.5.tgz</location>
+	<md5sum>501d07f34a5ed2a8a75feac8ac0d41d0</md5sum>
+</module>

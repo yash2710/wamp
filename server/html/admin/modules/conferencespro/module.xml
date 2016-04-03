@@ -1,0 +1,64 @@
+<module>
+	<rawname>conferencespro</rawname>
+	<name>Conference Pro</name>
+	<version>12.0.23</version>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php  Adds ability to manage Conference Room settings into the User Control Panel and also to create Conference IVRs </description>
+	<changelog>
+		*12.0.23* FREEPBX-8148 Some settings are not directly applicable from users in UCP without a amportal reload
+		*12.0.22* Force talking events on for all conferences, not just IVRs
+		*12.0.21* Visual button for more clarity and contact manager support
+		*12.0.19* Licensing technique fixes
+		*12.0.18* Change functionality for UCP
+		*12.0.17* UCP work and tweaks
+		*12.0.16* FREEI-241 Pinless Conference Inviting From UCP
+		*12.0.15* Cleanup for UCP
+		*12.0.14* Updating for realtime events
+		*12.0.13* FREEPBX-7892
+		*12.0.12* Undefined index cleanup in UCP
+		*12.0.11* License Fixes
+		*12.0.9* More work in UCP
+		*12.0.8* Restructure Parts of UCP
+		*12.0.7* Cosmetic changes in UCP
+		*12.0.6* Fix to Licensing
+		*12.0.5* Testing Licensing
+		*12.0.4* Testing Licensing
+		*12.0.3* Move Functionality to BMO
+		*12.0.2* Require music not musc
+		*12.0.1* UCP Module Support
+		*2.11.0.13* Sales cleanup
+		*2.11.0.10* Fix conference list ivr from showing as a bad dest
+		*2.11.0.9* #6823
+		*2.11.0.8* Fix spelling issue
+		*2.11.0.7* Fix issue where sales page was being cut off
+		*2.11.0.6* Fix sales display when not licensed
+		*2.11.0.5* Doing a reload as well.
+		*2.11.0.3* Fix bugs, add name, pin, adminpin, add js checks, add sales page
+		*2.11.0.2* Fix ARI crashing on uninstall issues
+	</changelog>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/confpro.php</link>
+	</commercial>
+	<menuitems>
+		<conferencespro>Conferences Pro</conferencespro>
+	</menuitems>
+	<depends>
+		<version>12.0.1alpha45</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.10.0</module>
+		<module>conferences ge 12.0.9</module>
+		<module>music ge 12.0.1</module>
+		<module>recordings ge 12.0.4</module>
+	</depends>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location>release/2.11/conferencespro-2.11.0.9.tgz</location>
+	<md5sum>9ec0f50d7ea75cc41018146fade2595c</md5sum>
+</module>

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+run_asterisk_hook_xmpp() {
+	prosody_exists && /etc/init.d/prosody start
+	prosody_exists && xmpppresence_exists && /etc/init.d/xmpppresence start
+}
+
+stop_asterisk_hook_xmpp() {
+	prosody_exists && /etc/init.d/prosody stop
+	prosody_exists && xmpppresence_exists && /etc/init.d/xmpppresence stop
+}
+
+chown_asterisk_hook_xmpp() {
+	chmod 0777 -R /var/log/prosody
+	chown prosody:prosody /etc/pki/tls/private/prosody.key
+	chown prosody:prosody /etc/pki/tls/certs/prosody.crt
+	if [[ -e /etc/init.d/prosody ]]; then
+		chown -R prosody:prosody /usr/com/prosody
+	fi
+}
+
+prosody_exists() {
+	if [[ -e /etc/init.d/prosody && -s $ASTETCDIR/prosody_additional.conf ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+xmpppresence_exists() {
+	if [[ -e /etc/init.d/xmpppresence ]]; then
+		return 0
+	else
+		return 1
+	fi
+}

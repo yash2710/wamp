@@ -1,0 +1,52 @@
+<module>
+	<rawname>areminder</rawname>
+	<name>Appointment Reminder</name>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php Appointment Reminder module for FreePBXis a unique way to automate
+	appointment confirmations, cancellations and reschedules. By simply specifying numbers and names to be called your PBX will automatically call at specified times and allow
+	recipients to confirm / cancel / reschedule appointments. The module gives you the flexibility to control all details of the calls from rate limiting to retry attempts and days
+	ahead to notify of an appointment. You have the ability to simply load a CSV list of numbers to call, or even add numbers and names manually. On the fly modifications can be
+	made to any Appointment Reminder list to allow for total flexibility. </description>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>2.11.6</version>
+	<category>Applications</category>
+	<menuitems>
+		<areminder>Appointment Reminder</areminder>
+	</menuitems>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/appointment-reminder.php</link>
+	</commercial>
+	<depends>
+		<version>2.10</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>ttsengines ge 2.10.0</module>
+	</depends>
+	<location>release/2.11/areminder-2.11.0.2.tgz</location>
+	<info/>
+	<changelog>
+		*2.11.6* Remove old PHPMailer code
+		*2.11.5.2* Fix issue with 'update' column.
+		*2.11.5* Re-enable file upload, and allow removal of URLs
+		*2.11.4* Lowercase repo case/race
+		*2.11.3* Add ability to download appointments via URI.
+		*2.11.0.6* FREEI-160
+		*2.11.0.5* Sales cleanup
+		*2.11.0.2* Don't install cron unless we are licensed
+		*2.11.0.1* Fix for FREEPBX 6745
+		*2.11.0.0* Bump for 2.11
+		*2.10.1.21* fix short tag causing issues with install
+		*2.10.1.20* re #1342
+		*2.10.1.19* re #1263 -
+		*2.10.1.18* Add unlicensed info
+		*2.10.1.17* Require sysadmin 2.10
+	</changelog>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<md5sum>101071e64ffe511b7735dc78d797e93c</md5sum>
+</module>

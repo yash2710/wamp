@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    
+<title>Instant Quiz Results</title>
+<script src="quizconfig.js">
+</script>
+</head>
+
+<body bgcolor="#CFD8DC">
+
+<p align="center"><strong><font face="Arial">
+
+
+<big>Instant Quiz Results</big></font></strong></p>
+<div align="center"><center>
+
+<table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%"><form method="POST" name="result"><table border="0" width="100%" cellpadding="0" height="116">
+        <tr>
+          <td height="25" bgcolor="#D3FFA8"><strong><font face="Arial"># of questions you got right:</font></strong></td>
+          <td height="25"><p><input type="text" name="marks" size="24"></td>
+        </tr>
+        <tr>
+          <td height="17" bgcolor="#D3FFA8"><strong><font face="Arial">The questions you got wrong:</font></strong></td>
+          <td height="17"><p><textarea name="T2" rows="3" cols="24" wrap="virtual"></textarea></td>
+        </tr>
+        <tr>
+          <td height="25" bgcolor="#D3FFA8"><strong><font face="Arial">Grade in percentage:</font></strong></td>
+          <td height="25"><input type="text" name="girish" size="8"></td><td align="left">
+
+        </tr>
+      </table>
+      <br>
+      <br>
+      <table>
+      <tr>
+      <td> Name : </td>
+      <td> <input type="text" name="user_name"></td>
+      </tr>
+      <tr>
+      <td> School : </td>
+      <td><select name="school">
+            <option value="Asarva Girls School 3">Asarva Girls School 3</option>
+            <option value="Asarva School 9, 10">Asarva School 9, 10</option>
+            <option value="Chandlodia Guj. School 1,2">Chandlodia Guj. School 1,2</option>
+            <option value="Digvijay School Ranip">Digvijay School Ranip</option>
+            <option value="Gota Primary School">Gota Primary School</option>
+            <option value="Jagatpur Municipal School">Jagatpur Municipal School</option>
+            <option value="Jodhpur School 2 Afternoon Shift">Jodhpur School 2 Afternoon Shift</option>
+            <option value="Ranip School 2">Ranip School 2</option>
+            <option value="Ranip School 4">Ranip School 4</option>
+            <option value="Ranip School 8" selected >Ranip School 8</option>
+            <option value="Thaltej Prathmik School 1">Thaltej Prathmik School 1</option>
+            <option value="Thaltej Prathmik School 2">Thaltej Prathmik School 2</option>
+          </select></td>
+      </tr>
+      
+      </table>
+     <div
+  style ="margin-top:30px;" align="center"><center>
+  <input type="button" value="View solution" name="B2"
+  onClick="showsolution()">
+      <input type="button" name="Submit" value="Submit" onClick="location.href='index.html'">
+       </center></div>
+       
+    </form>
+    
+    </td>
+  </tr>
+</table>
+
+<script>
+var wrong=0
+for (e=0;e<=2;e++)
+document.result[e].value=""
+
+var results=document.cookie.split(";")
+console.log(results)
+for (n=0;n<=results.length-1;n++){
+if (results[n].charAt(1)=='q')
+parse=n
+}
+
+var incorrect=results[0].split("=")
+incorrect=incorrect[1].split("/")
+if (incorrect[incorrect.length-1]=='b')
+incorrect=""
+document.result[0].value=totalquestions-incorrect.length;
+var x;
+document.result[2].value=(totalquestions-incorrect.length)/totalquestions*100+"%";
+x=(totalquestions-incorrect.length)/totalquestions*100
+for (temp=0;temp<incorrect.length;temp++)
+document.result[1].value+=incorrect[temp]+", "
+
+</script>
+
+</html>

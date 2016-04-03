@@ -1,0 +1,56 @@
+fieldset {
+	width: 47%;
+	float: left;
+	margin: 0;
+	height: 100%;
+	background-color: #FFEFEF;
+}
+
+.middle {
+	width: 6%;
+	float: left;
+	margin: 0;
+	height: 100%;
+}
+
+legend {
+	background-color: #FFEFEF;
+	text-align: center;
+}
+
+
+#tabs {
+	float: left;
+	width: 90%;
+}
+fieldset:first-child { background-color: #EFFFEF; }
+fieldset:first-child>legend { background-color: #EFFFEF; }
+
+.tab {
+	float: left;
+	width: 100%;
+	display: block;
+}
+
+fieldset>span {
+	margin: 5px;
+	display: inline-block;
+	text-align: left;
+}
+
+.button {
+	position: absolute;
+	margin: 0px auto;
+}
+.allleft {
+	top: 30%;
+}
+
+.swap {
+	top: 50%;
+}
+
+.allright {
+	top: 70%;
+}
+

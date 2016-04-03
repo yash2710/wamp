@@ -1,0 +1,42 @@
+<module>
+	<rawname>vmnotify</rawname>
+	<name>Voicemail Notifications</name>
+	<version>2.11.0.3</version>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. You can configure a new Voicemail Notification to 
+	monitor a mailbox for new messages. When a new message is left in that mailbox the system will call the recipients listed below until one of them accepts responsibility for 
+	the message. All numbers in the first priority will be called simultaneously, then if nobody has accepted the message it will continue to call all recipients in the next 
+	higher priority until it runs out of priorities to call. It will then retry the entire list if configured to do so.</description>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+	        <link>//www.schmoozecom.com/vm-notify.php</link>
+        </commercial>
+	<changelog>
+		*2.11.0.3* Sales cleanup
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.24* Fix vmnotify when emailing attachment
+		*2.10.0.23* Packaging of ver 2.10.0.23
+		*2.10.0.22* Packaging of ver 2.10.0.22
+		*2.10.0.21* Put externnotify in voicemail.conf instead of vm_general.inc 
+		*2.10.0.20* fix php tag 
+		*2.10.0.19* re #1263 - re #1263
+	</changelog>
+	<depends>
+		<version>2.7.0</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<menuitems>
+		<vmnotify>Voicemail Notifications</vmnotify>
+	</menuitems>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<location>release/2.11/vmnotify-2.11.0.0.tgz</location>
+	<md5sum>95896fbb590050f6c6e9dea8a1f5398f</md5sum>
+</module>

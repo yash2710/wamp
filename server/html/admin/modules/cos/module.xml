@@ -1,0 +1,43 @@
+<module>
+	<rawname>cos</rawname>
+	<name>Class of Service</name>
+	<publisher>Schmoozecom.com</publisher>
+	<repo>commercial</repo>
+	<version>12.0.16</version>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<license>Commercial</license>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/classofservice.php</link>
+	</commercial>
+	<category>Admin</category>
+	<description>COMMERCIAL MODULE, REQUIRES A LICENSE.
+		Class of Service allows you to limit access, per extension, to feature codes, trunks, queues, ring groups, etc.</description>
+	<changelog>
+		*12.0.16* FREEPBX-8301 dont explode if contactmanager is not installed
+		*12.0.15* Add Contact Manager groups.
+		*12.0.14* Skip CoS checks on ALL external calls
+		*12.0.13* Check for sysadmin first before attempting to ask for license
+		*12.0.12* Resolve issue with DIDs with no Routes causing crash
+		*12.0.11* Licensing updates
+		*12.0.9* Add Time Condition and Day/Night Toggle support.
+		*12.0.8* Change Feature Codes to display name
+		*12.0.7* Ensure 'Reload' bar is triggered.
+		*12.0.6* Initial Release
+	</changelog>
+	<depends>
+		<module>core ge 12.0.1alpha9</module>
+		<module>framework ge 12.0.1alpha26</module>
+		<module>sysadmin ge 12.0.3</module>
+		<phpversion>5.3.0</phpversion>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+	</depends>
+	<menuitems>
+		<cos>Class of Service</cos>
+	</menuitems>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location></location>
+	<md5sum></md5sum>
+</module>

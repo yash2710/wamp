@@ -1,0 +1,29 @@
+<module>
+	<rawname>ttsengines</rawname>
+	<name>Text To Speech Engines</name>
+	<version>2.11.0.3</version>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+        <repo>commercial</repo>
+	<description>Allows you to configure text to speech engines</description>
+	<category>Settings</category>
+	<menuitems>
+		<ttsengines>Text To Speech Engines</ttsengines>
+	</menuitems>
+	<location>release/2.11/ttsengines-2.11.0.1.tgz</location>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<depends>
+	</depends>
+	<changelog>
+		2.11.0.3 Add license file
+		2.11.0.0 Release for 2.11
+		2.10.0.3 Security update; downstream changes 
+		2.10.0.2 Security update; downstream changes 
+		*2.10.0.1* Includes license information
+		*2.10.0* version bump
+	</changelog>
+	<md5sum>d8f07d5f19d2bc1d5abe583a54415ba2</md5sum>
+</module>

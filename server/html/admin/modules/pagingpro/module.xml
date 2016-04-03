@@ -1,0 +1,53 @@
+<module>
+	<rawname>pagingpro</rawname>
+	<repo>commercial</repo>
+	<name>Paging Pro</name>
+	<version>12.0.6</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Applications</category>
+	<changelog>
+		*12.0.6* Regression from FREEPBX-8497
+		*12.0.5* FREEPBX-8497
+		*12.0.4* FREEPBX-8351 Fix Paging Pro Scheduler UI is Awry
+		*12.0.3* Escape class
+		*12.0.2* Resolve licensing issues
+		*12.0.1* Add support for Multicast RTP (Asterisk 13 only)
+		2.11.0.8 Skinning fixes for FreePBX 12
+		2.11.0.5 Fix bug with notifications if using prepend
+		2.11.0.4 Fix scheduler when using app_meetme
+		2.11.0.3 check if func available before using
+		2.11.0.1 check if func available before using
+		2.11.0.1 Fixes issue where the page recording on a force valet or valet would keep going even after the recording was deleted.
+		2.11.0.0 Bump for 2.11
+		2.10.0.73 Fixed scheduler crash if no scheduler settings set
+	</changelog>
+	<depends>
+		<version>2.10</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.10.0</module>
+		<module>paging ge 12.0.7</module>
+	</depends>
+	<description>COMMERCIAL MODULE REQUIES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php.  This Module expands the normal Paging module in
+	FreePBX to add the following features:
+
+	Outbound Notifications - Enables the ability to notify a group of phone(s) when a user dials a specific number, ie: 911. Any page group can be linked in the outbound routes
+	module. When a call is placed a page will go out to the page group notifying the page group of what number was failed and what user dialed the number. Any user of the page
+	group can dial *1 to barge into the call and speak.
+
+	Valet Style Paging (Airport Style) - You can now choose to have your pages recorded and when you hang up have it send the audio file to all the devices that are part of the
+	page group. This setting is done on a per page group. You can also tell the system to only use Valet if someone dials the page group and it is in use already.
+
+	Prepend Recording - You can now have the page group weather normal or valet style play a recorded message to all participants of the page group before the pager can start
+	speaking.
+
+	Scheduled Pages - You can now define custom schedules to have the system page a group of devices and play a recording. This is a great replacement for school bell systems or lunch break buzzers.
+	</description>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location>release/2.11/pagingpro-2.11.0.5.tgz</location>
+	<md5sum>9111dc87cd948dc53fe32155e04067fc</md5sum>
+</module>

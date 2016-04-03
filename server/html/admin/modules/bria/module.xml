@@ -1,0 +1,39 @@
+<module>
+	<rawname>bria</rawname>
+	<repo>commercial</repo>
+	<name>Bria Cloud Solutions</name>
+	<version>2.11.0.14</version>
+	<publisher>Schmooze Com, Inc.</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Admin</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE AND Bria Cloud Solutions SUBSCRIPTION FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php. This module manages and configures Bria Cloud Solutions.</description>
+	<menuitems>
+		<bria>Bria Cloud Solutions</bria>
+	</menuitems>
+	<depends>
+		<phpversion>5.3.0</phpversion>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<module>userman ge 2.11.0beta2</module>
+	</depends>
+	<changelog>
+		*2.11.0.14* - #8399 - Ensure we are display the reload bar after changes are made
+		*2.11.0.12* #8193 - Update Add Users Link
+		*2.11.0.11* Fix issue with userman being disabled
+		*2.11.0.9* Fix from admin name and groupName being different
+		*2.11.0.8* Module.xml cleanup
+		*2.11.0.7* Fix info link in module.xml
+		*2.11.0.6* More copy changes
+		*2.11.0.5* More copy changes
+		*2.11.0.4* Copy changes
+		*2.11.0.2* Cleanup Help Text
+		*2.11.0.1* Fix issue with device deletion
+		*1.0.0.0* Initial Build
+	</changelog>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<info>https://secure.counterpath.com/Store/CounterPath/BriaCloud.aspx</info>
+	<location>release/2.11/bria-1.0.0.0.tgz</location>
+	<md5sum>e784b420c579ca7a6eb51f94b616e451</md5sum>
+</module>

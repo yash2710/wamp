@@ -1,0 +1,24 @@
+(06 Feb 2015 21:09:35)-[DEBUG]: Starting modify script
+(06 Feb 2015 21:09:35)-[DEBUG]: Agent interface type: peer
+(06 Feb 2015 21:09:35)-[DEBUG]: Agent login context: from-queue
+(06 Feb 2015 21:09:35)-[DEBUG]: Starting REST connection to http://localhost:58080/communication_manager/api/resource/
+(06 Feb 2015 21:09:35)-[DEBUG]: Checking core server default
+(06 Feb 2015 21:09:36)-[DEBUG]: Looking up core server id for slug default
+(06 Feb 2015 21:09:36)-[DEBUG]: Core server id:9280cd1c-4ad7-4ed9-ae8a-0648b0b45cf7
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing core server
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing voicemail agent
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing recording agent
+(06 Feb 2015 21:09:36)-[DEBUG]: Checking PBX server connection
+(06 Feb 2015 21:09:36)-[DEBUG]: Found matching PBX server connection with id:6c91b89b-b018-4642-ad31-02c99f208e63
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing administrators
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing extensions
+(06 Feb 2015 21:09:36)-[DEBUG]: Adding extension: 1002
+(06 Feb 2015 21:09:36)-[DEBUG]: Syncing users (userman)
+(06 Feb 2015 21:09:37)-[DEBUG]: Adding user: 1002
+(06 Feb 2015 21:09:37)-[DEBUG]: Syncing user contact information (userman)
+(06 Feb 2015 21:09:37)-[DEBUG]: Syncing extension users (userman)
+(06 Feb 2015 21:09:37)-[DEBUG]: Setting extension user on extension:1002 to user:1002
+(06 Feb 2015 21:09:37)-[DEBUG]: Syncing queues
+(06 Feb 2015 21:09:37)-[DEBUG]: Syncing conference rooms
+(06 Feb 2015 21:09:37)-[DEBUG]: Syncing parking lot
+(06 Feb 2015 21:09:37)-[DEBUG]: Total Running Time:1.3962597846985s

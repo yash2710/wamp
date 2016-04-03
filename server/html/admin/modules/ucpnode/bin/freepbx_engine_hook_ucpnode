@@ -1,0 +1,30 @@
+#!/bin/bash
+# This script is called when the user executes 'amportal start/stop/chown'
+
+run_asterisk_hook_ucpnode() {
+	if [ $NODEJSENABLED = "1" ]; then
+		su $AMPASTERISKUSER<<'EOF'
+cd $AMPWEBROOT/admin/modules/ucpnode/node
+mkdir -p $ASTVARLIBDIR/ucp
+mkdir -p logs
+export FOREVER_ROOT=$ASTVARLIBDIR/ucp
+npm start
+exit
+EOF
+	fi
+}
+
+#This happens AFTER asterisk has been stopped
+stop_asterisk_hook_ucpnode() {
+	su $AMPASTERISKUSER<<'EOF'
+cd $AMPWEBROOT/admin/modules/ucpnode/node
+mkdir -p $ASTVARLIBDIR/ucp
+mkdir -p logs
+export FOREVER_ROOT=$ASTVARLIBDIR/ucp
+npm stop
+exit
+EOF
+}
+
+#chown_asterisk_hook_ucpnode() {
+#}

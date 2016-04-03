@@ -1,0 +1,45 @@
+<module>
+	<rawname>superfecta</rawname>
+	<repo>extended</repo>
+	<name>CID Superfecta</name>
+	<version>2.11.16</version>
+	<type>setup</type>
+	<category>Admin</category>
+	<publisher>POSSA</publisher>
+	<license>GPLv2+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-2.0.txt</licenselink>
+	<description>
+		Provides simultaneous use of, and complete control over multiple caller id data sources.
+	</description>
+	<changelog>
+		*2.11.16* Remove usage of really old installer methods for 2.8 and lower that no longer apply
+		*2.11.15* https://github.com/POSSA/Caller-ID-Superfecta/commits/release/2.11
+		*2.11.14* Bad module name fix
+		*2.11.13* Numerous changes
+		*2.11.12* Update all sweden sources and some improvements and database fixes
+		*2.11.11* Use new abstracted functions if exist
+		*2.11.10* Resolve class confliction in FreePBX 12
+		*2.11.9* XBMC Updates
+		*2.11.8* Fixes crash with improperly named class
+		*2.11.7* Added source Gevonden.CC for Dutch numbers and fixes listed on github
+		*2.11.6* Numerous Updates from GitHub
+		*2.11.5* Remove stage unexpected character..
+		*2.11.4* Sources updates and error clean up
+		*2.11.3* Added paginasblancas.ar and sugarcm
+		*2.11.2* Added in PDO Database search, Regular Expressions Search, FOP2 Phonebook search, Abandon Lookup, Trunk Provided Updates, also fixed descriptions in source items
+		*2.11.1* Added in a bunch of sources: Send To Growl, Send To URL, OpenCNAM, TAB Reloaded, CallWithUs, Send to MythTV and Asteridex
+		*2.11.0beta4* Remove dangling symlinks. Remove all illegal sources (against TOS)
+		*2.11.0beta2*	Fix sources versioning
+		*2.11.0beta1.2* fix xml
+		*2.11.0beta1.1* import into online repo
+	</changelog>
+	<menuitems>
+		<superfecta>CID Superfecta</superfecta>
+	</menuitems>
+	<info>https://github.com/POSSA/Caller-ID-Superfecta/wiki</info>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<md5sum>a71ce14e885b43669a50395c975c0df9</md5sum>
+	<location>release/2.11/superfecta-2.11.5.tgz</location>
+</module>

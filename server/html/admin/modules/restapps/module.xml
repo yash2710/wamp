@@ -1,0 +1,85 @@
+<module>
+	<rawname>restapps</rawname>
+	<repo>commercial</repo>
+	<name>REST Phone Applications</name>
+	<version>12.0.25</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Admin</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. Applications using the RESTful API</description>
+	<changelog>
+		12.0.25 Fix numbers ending with # on Follow Me app.
+		12.0.24 Fix Parking app on Asterisk 12+.
+		12.0.23 Fix disabling of Call Forward on Aastra phones.
+		12.0.22 Remove icon support on Obihai phones.
+		12.0.21 Reduce number of requests to REST API in Contacts application
+		12.0.20 Reduce number of icons presented for Aastra phones.
+		12.0.19 Add pagination for Aastra phones.
+		12.0.15 Add support for Class of Service in Contacts application
+		12.0.14 Fix queues/queue agent sync BLFs.
+		12.0.13 Switch to a different Aastra-documented method for autoanswer, since "Alert-Info: info=alert-autoanswer" does not properly honor user preference.
+		12.0.12 Fix BLF on softkeys and prgkeys.
+		12.0.10 Automatically go into edit mode when possible, on pages with 1 entry
+		12.0.9 Add Contacts application
+		12.0.8 Better handling of BLF in Parking application
+		12.0.7 Fix Parking app on Asterisk 13.
+		12.0.6 FREEPBX-7976 Only show if services are running in dashboard if licensed
+		12.0.4 Set callforward extensions to be numeric
+		12.0.3 Add greetings and callback support to Voicemail application
+		12.0.2 Add support for EndPoint Manager 12.
+		12.0.1 Add dashboard hook support
+		2.11.2.33 Use more reliable method of restarting daemon on install.
+		2.11.2.32 Fix icons on Aastra 6867i/6869i.
+		2.11.2.30 Fix model number for Yealink T41P
+		2.11.2.29 Add BLF for Conference application
+		2.11.2.28 Sales cleanup
+		2.11.2.26 Add per-application option for hiding idle screen display (Aastra/Yealink only)
+		2.11.2.25 Split Transfer VM out to a separate sub-application
+		2.11.2.24 Allow transfering to a users voicemail while in call
+		2.11.2.22 Add support for Voicemail App
+		2.11.2.21 Make Login App work on Digium phones (firmware 1.4.2.0+)
+		2.11.2.20 Allow login/pause in Queues without dialing an extension
+		2.11.2.18 Add support for Queues and Queue Agents Apps
+		2.11.2.16 Upgrade to mysqli database connector
+		2.11.2.15 Add support for Time Conditions App
+		2.11.2.13 Add support for Call Flow App
+		2.11.2.12 Allow parking of the active call on Digium phones (firmware 1.4+)
+		2.11.2.11 Add support for Call Forward App
+		2.11.2.9 Start/stop restapps daemon on amportal start/stop.
+		2.11.2.5 Add Presence State preferences
+		2.11.2.4 Add support for Presence State App
+		2.11.2.3 Fix issue with login/logout for global settings
+		2.11.2.1 Add support for Login/Logout App
+		2.11.1.3 Have Conf Room app laucnh when using dial button
+		2.11.1.1 Add support for Conference Room App
+		2.11.0.11 Fix issue with directory
+		2.11.0.10 Fix bug with startup sync.php.
+		2.11.0.9 Add in new landing page
+		2.11.0.6 Add depends on End Point Manager
+		2.11.0.5 Add default landing page
+		2.11.0.3 first version
+	</changelog>
+	<depends>
+		<module>endpoint ge 12.0.0.1</module>
+		<module>restapi</module>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<menuitems>
+		<restapps>REST Phone Applications</restapps>
+	</menuitems>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/restapps.php</link>
+	</commercial>
+	<hooks>
+		<dashboard namespace="FreePBX\modules\Dashboard\Sections" class="Overview">
+			<method namespace="FreePBX\Modules" class="Restapps" callingMethod="getSummary">dashboardService</method>
+		</dashboard>
+	</hooks>
+	<supported>
+		<version>12.0</version>
+	</supported>
+</module>

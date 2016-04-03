@@ -1,0 +1,252 @@
+<?php
+
+if (function_exists('faxpro_get_user_usage')) {
+
+/**
+ * @file
+ * Functions for the interface to the call monitor recordings
+ */
+
+/**
+  * Class for faxpro
+  */
+class faxpro {
+
+
+  /*
+   * rank (for prioritizing modules)
+   */
+  function rank(){
+	$rank = 3;
+	return $rank;
+  }
+
+  /*
+   * init
+   */
+  function init(){ }
+
+	/*
+	* Adds menu item to nav menu
+	*
+	* @param $args
+	*   Common arguments
+	*/
+	function navMenu($args){
+		$ret = "<small><small><a href='" . $_SESSION['ARI_ROOT'] . "?m=faxpro&f=display'>" . _("Fax") . "</a></small></small>";
+		return $ret;
+	}
+
+
+  /*
+   * Acts on the user settings
+   *
+   * @param $args
+   *   Common arguments
+   * @param $a
+   *   action
+   */
+  function action($args) {
+	global $faxpro;
+
+	$this->faxpro = isset($faxpro) ? $faxpro : false;
+	$ret		= '';
+	$file		= isset($_REQUEST['file'])		? $_REQUEST['file'] 	: '';
+	$newfax		= isset($_FILES['newfax'])		? $_FILES['newfax']		: '';
+	$forward	= isset($_REQUEST['forward'])	? $_REQUEST['forward']	: '';
+	$delete		= isset($_REQUEST['delete'])	? $_REQUEST['delete']	: '';
+	$ajax		= isset($_REQUEST['ajax'])		? $_REQUEST['ajax']		: '';
+
+	//show file
+	if ($file && !$forward) {
+		$this->download($file);
+		exit();
+	}
+
+	//send fax
+	if ($newfax) {
+		$this->send_fax();
+	}
+
+	//delete fax
+	if ($delete) {
+		$this->delete($_REQUEST['delete']);
+		$ret = $this->display($args);
+	}
+
+	//forward fax
+	if ($forward) {
+		$this->forward_fax();
+	}
+
+	//dont display the file on ajax post
+	if ($ajax != 'true') {
+		$ret = $this->display($args);
+	}
+	return $ret;
+  }
+
+/*
+	* Displays stats page
+	*
+	* @param $args
+	*   Common arguments
+	*/
+	function display($args) {
+		global $amp_conf, $faxpro, $db;
+
+		$user 				= $_SESSION['ari_user']['extension'];
+		$fax 				= fax_detect();
+		$user_set 			= fax_get_user($user);
+		$vars['fax_set']	= fax_get_settings();
+		$vars['count']		= faxpro_get_user_usage($user);
+		$vars['fax']		= faxpro_get_user_storage($user);
+		$vars['per']		= number_format((100/$vars['fax_set']['maxpages']) * $vars['count'], 0);
+		$get_user_set		= array(
+								'faxcovername',
+								'faxcovertel',
+								'faxcoveremail',
+
+								);
+
+		foreach ($get_user_set as $key) {
+			$vars[$key]		= isset($user_set[$key]) ? $user_set[$key] : '';
+		}
+		!$fax['module']
+		|| ($fax['module'] == 'res_fax'
+			&& $fax['license'] < 1
+			&& $fax['spandsp'] != TRUE
+			)
+		|| !$faxpro
+			? $vars['faxhidesend'] = true
+			: $vars['faxhidesend'] = false;
+
+		$faxhidejsmsg = _('Fax misconfiguration error or invalid license. Contact system administrator.');
+
+
+		//hide send fax if quota is full
+		if ($vars['count'] >= $vars['fax_set']['maxpages']) {
+			$vars['faxhidesend'] 	= true;
+			$faxhidejsmsg			= _('Over quota. Please delete some stored faxes and try again.');
+		}
+
+		$html = '<link rel="stylesheet" '
+				. 'href="/admin/modules/faxpro/ari/css/faxpro.module.css" '
+				. 'type="text/css" />';
+		$html .= '<script type="text/javascript">'
+				. 'var faxhidesend=' . ($vars['faxhidesend'] ? 'true' : 'false') . ';'
+				. 'var faxhidejsmsg = "' . $faxhidejsmsg . '";'
+				. '</script>';
+
+		$html .= load_view(dirname(__FILE__) . '/../views/sendfax.php', $vars);
+		$html .= load_view(dirname(__FILE__) . '/../views/faxreport.php', $vars);
+		//unset($vars['fax']);dbug('vars', $vars);
+
+		$html .= '<script src="theme/js/jquery.form.js"></script>';
+		$html .= '<script src="theme/js/faxpro.module.js"></script>';
+		return $html;
+	}
+
+	function download($faxid){
+		$fax = faxpro_get_fax_details($faxid);
+
+		//update fax as read
+                $fax['new']     = 'no';
+                faxpro_put_fax_details($fax);
+
+		if ($fax['file_exists']) {
+			download_file($fax['file']);
+		} else {
+			dbug('Cannot download fax - not found!', $fax);
+		}
+	}
+
+	function forward_fax(){
+		global $db;
+
+		if (!$this->faxpro) {
+			echo _('Fax misconfiguration error or invalid license. Contact system administrator.') . PHP_EOL;
+			exit();
+		}
+		$faxid		= isset($_REQUEST['forward']) ? $_REQUEST['forward'] : '';
+		$tonum		= isset($_REQUEST['tonum']) ? $_REQUEST['tonum'] : '';
+		$is_local	= isset($_REQUEST['is_local']) && $_REQUEST['is_local'] == 'true'
+					? true : false;
+		if (!$faxid) {
+			return false;
+		}
+		$set = faxpro_get_fax_details($faxid);
+
+		if (!$set['file_exists']) {
+			echo _('Error - file not found!')  . PHP_EOL;
+			dbug($set['file'] . ' not found - not sending fax');
+			exit();
+		}
+
+		$fax = new FaxproSend($_SESSION['ari_user']['extension'], $tonum, $is_local, true);
+		$fax->add_file($set['file']);
+		$fax->send_fax();
+		exit();
+	}
+
+	function send_fax(){
+		if (!$this->faxpro) {
+			echo _('Fax misconfiguration error or invalid license. Contact system administrator.') . PHP_EOL;
+			exit();
+		}
+
+		$vars['user'] = $_SESSION['ari_user']['extension'];
+
+		$get = array(
+				'tonum'			=> '',
+				'is_local'		=> false,
+				'dest'			=> '',
+				'coversheet'	=> false,
+				'name'			=> '',
+				'msg'			=> '',
+				'tel'			=> '',
+				'email'			=> '',
+				'sender'		=> '',
+
+		);
+
+		foreach ($get as $k => $v) {
+			$vars[$k] = isset($_REQUEST[$k]) ? $_REQUEST[$k] : $v;
+		}
+		$vars['coversheet'] = $vars['coversheet']  !== false ? true : false;
+
+		if (!isset($_FILES, $_FILES['newfax'])) {
+			echo _('No files received!') . PHP_EOL;
+			exit();
+		}
+
+		$fax = new FaxproSend($vars['user'], $vars['tonum'], $vars['is_local']);
+
+		//add files
+		for ($i = 0; $i < count($_FILES['newfax']['name']); $i++) {
+			$files	= & $_FILES['newfax'];
+			$ext	= preg_replace('/[^[:alpha:]]/i', '', pathinfo($files['name'][$i], PATHINFO_EXTENSION));
+			$file	= $files['tmp_name'][$i] . '.' . $ext;
+			move_uploaded_file($files['tmp_name'][$i], $file);
+
+			$fax->add_file($file);
+			unlink($file);
+		}
+
+		//add coverpage if requested
+		if ($vars['coversheet']) {
+			$fax->add_coversheet($vars['name'], $vars['msg'],  $vars['sender'], $vars['tel'], $vars['email']);
+		}
+
+		$fax->send_fax();
+
+		exit();
+	}
+
+	function delete($faxid){
+		faxpro_del_fax($faxid);
+	}
+
+} // class
+}
+?>

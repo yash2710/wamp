@@ -1,0 +1,46 @@
+<module>
+	<rawname>calllimit</rawname>
+	<name>Outbound Call Limit</name>
+	<version>2.11.0.10</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Connectivity</category>
+	<menuitems>
+		<calllimit>Outbound Call Limit</calllimit>
+	</menuitems>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION. Please visit www.schmoozecom.com/oss.php - Restrict Outbound Calls at an outbound route level</description>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/outbound-call-limiting.php</link>
+	</commercial>
+	<changelog>
+		2.11.0.10 Fix view issues when unlicensed
+		2.11.0.9 Sales Cleanup
+		2.11.0.6 Fix issue where calllimit_usage wasn't be created on new install
+		2.11.0.5 Bump to force module to install
+		2.11.0.4 Fix potential issue with more than 10 groups.
+		2.11.0.3 Make default recording play.
+		2.11.0.2 Add ability to define more then 1 rule
+		2.11.0.1 Push for 2.11
+		2.10.0.8 re #1711 -
+		2.10.0.7 Packaging of ver 2.10.0.7
+		2.10.0.6 re #1472 - #1427
+		2.10.0.5 re #1392 -
+		2.10.0.4 re #1392 -
+	</changelog>
+	<depends>
+		<version>2.10</version>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+		<module>recordings ge 3.3.8</module>
+		<module>core ge 2.10.0beta1</module>
+	</depends>
+	<supported>
+		<version>2.10</version>
+	</supported>
+				<location>release/2.11/calllimit-2.11.0.6.tgz</location>
+				<md5sum>331e4186572a177ff7c7bf00ec00cebf</md5sum>
+</module>

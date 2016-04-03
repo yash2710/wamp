@@ -1,0 +1,59 @@
+<module>
+	<rawname>broadcast</rawname>
+	<name>Broadcast</name>
+	<version>2.11.8</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php  The Broadcast module for FreePBX allows you to broadcast messages
+	to your custoemrs or clients.  You can create campaings and set start and end times.  From their you can direct where you want the call to be directed to based on if a humna being
+	or a answering machine answer the call.  Upload your CDS list of names and numbers and start your campaign.  You can also choose to get reports on your campaign daily or after the
+	campaign completes.</description>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/xact-dialer.php</link>
+  	</commercial>
+	<menuitems>
+		<broadcast>Broadcast</broadcast>
+	</menuitems>
+	<depends>
+    <version>2.10</version>
+    <phpcomponent>Zend Guard Loader</phpcomponent>
+    <phpversion>5.3.0</phpversion>
+    <module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<location>release/2.11/broadcast-2.11.0.1.tgz</location>
+	<md5sum>b471ad9fdc91b33eeb6ac30b2390eaf3</md5sum>
+	<changelog>
+		*2.11.8* Don't generate invalid destinations when not purchased
+		*2.11.7.1* Try harder to stop apache killing us.
+		*2.11.7* Avoid accidental killing by apache restart
+		*2.11.6* Fix off-by-one error when calculating call limits
+		*2.11.5* Workaround call to undefined function broadcast_backgrounddetect()
+		*2.11.4* Stop email spam of 'campaign resumed', plus more performance fixes.
+		*2.11.3.1* FREEPBX-7491 - Some fields weren't being escaped properly
+		*2.11.3* Performance improvements, Fix FREEPBX-7519 and FREEPBX-7521
+		*2.11.2* Force CallerID name to be set to name in Call Group
+		*2.11.1.3* Fix single-quote not being able to be used in name.
+		*2.11.1.2* Fix long delay with AMD defaults.
+		*2.11.1.1* Rewrite, new functionality.
+		*2.11.0.11* Fix incorrect logic in sales cleanup, preventing sales page if no license exists
+		*2.11.0.3* Sales cleanup
+		*2.11.0.2* Changes to Zend Licensing to make it more portable.
+		*2.11.0.1* Caller-id shows the person we are calling based off of the csv upon successfull transfer
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.28* Fix calls continuously being retried when campaign is restarted
+		*2.10.0.27* Add indexes to db
+		*2.10.0.26* Take out expensive join and try something else
+		*2.10.0.25* Take out expensive join and try something else
+		*2.10.0.24* Fix some campaign reporting stats
+	</changelog>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<methods>
+		<get_config pri="700">broadcast_get_config</get_config>
+	</methods>
+</module>

@@ -1,0 +1,29 @@
+<module>
+	<rawname>sng_mcu</rawname>
+	<name>Sangoma MCU</name>
+    <publisher>Schmooze Com Inc</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>2.11.0.3</version>
+	<category>Admin</category>
+	<description>
+	Modules to setup and manage Sangoma MCU
+	</description>
+	<changelog>
+		2.11.0.3 Fixes issue with multiple MCUs being setup via the module 
+		2.11.0.0 Initial Mockup
+	</changelog>
+	<depends>
+		<module>framework ge 2.11.0</module>
+		<phpversion>5.1.0</phpversion>
+	</depends>
+	<menuitems>
+		<sng_mcu>Sangoma MCU</sng_mcu>
+	</menuitems>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<location>release/2.11/sng_mcu-2.11.0.1.tgz</location>
+	<md5sum>08aac480fbf7490591c9ef43cb792c21</md5sum>
+</module>

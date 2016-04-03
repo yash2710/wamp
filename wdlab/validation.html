@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body >
+  <select id="type">
+    <option>IP</option>
+    <option>Date</option>
+    <option>Special Char Restriction</option>
+    <option>Alphanumeric</option>
+  </select>
+  <input type="text" id="t">
+  <button onclick="myFunction()">Check</button>
+<script>
+function myFunction() {
+  var opt = document.getElementById('type').selectedIndex;
+      if (opt == '0') {
+          ip();
+      } else if (opt == '1') {
+          date();
+      } else if (opt == '2') {
+          sc();
+      } else if (opt == '3') {
+          an();
+      }
+}
+
+function ip(){
+    var str = document.getElementById('t').value;
+
+      if(/^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/.test(str)){
+        alert("Valid");
+      } else{
+        alert("Invalid");
+      }
+}
+
+function date(){
+  var str = document.getElementById('t').value;
+  if(/^(([1-9])|([0-2][0-9])|([3][0-1]))(\/|-|\.|\s)(([1-9]|0[1-9])|1[0-2])(\/|-|\.|\s)\d{4}$/.test(str)){
+    alert("Valid");
+  } else{
+    alert("Invalid");
+  }
+}
+
+function an(){
+  var str = document.getElementById('t').value;
+  if(/([a-z0-9])$/.test(str)){
+    alert("Valid");
+  } else{
+    alert("Invalid");
+  }
+}
+
+function sc(){
+  var str = document.getElementById('t').value;
+  if(str.search(/4+/) == -1){
+    alert("Valid");
+  } else{
+    alert("Invalid");
+  }
+}
+</script>
+
+</body>
+</html>

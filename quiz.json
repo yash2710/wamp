@@ -1,0 +1,18 @@
+[
+	{
+		"que":"hi",
+		"o1":"option 1",
+		"o2":"option 2",
+		"o3":"option 3",
+		"o4":"option 4",
+		"ans":"01"
+	},
+	{
+		"que":"hio",
+		"o1":"option 1",
+		"o2":"option 2",
+		"o3":"option 3",
+		"o4":"option 4",
+		"ans":"01"
+	}
+]

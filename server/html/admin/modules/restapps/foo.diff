@@ -1,0 +1,182 @@
+diff --git a/digium_phone/main.js b/digium_phone/main.js
+index 05f45c6..3bfa114 100644
+--- a/digium_phone/main.js
++++ b/digium_phone/main.js
+@@ -530,8 +530,9 @@ main.pageDisplay = function(page) {
+ 		}
+ 	}.bind(this);
+ 
+-	var need_select = false;
+ 	var need_change = false;
++	var change_auto = false;
++	var need_select = false;
+ 	var need_dial = false;
+ 
+ 	var items = [];
+@@ -549,6 +550,7 @@ main.pageDisplay = function(page) {
+ 		case 'number':
+ 		case 'text':
+ 			need_change = true;
++			change_auto = true;
+ 			/*jsl:fallthru*/
+ 		case 'label':
+ 			txt = '';
+@@ -564,6 +566,7 @@ main.pageDisplay = function(page) {
+ 			break;
+ 		case 'password':
+ 			need_change = true;
++			change_auto = true;
+ 			txt = '';
+ 			if (entry.display && entry.display.length > 0) {
+ 				txt = entry.display + ': ******';
+@@ -577,6 +580,7 @@ main.pageDisplay = function(page) {
+ 			break;
+ 		case 'choice':
+ 			need_change = true;
++			change_auto = true;
+ 			items[items.length] = {
+ 				'text' : (entry.iconstring ? entry.iconstring : '') + entry.display,
+ 				'id' : entry
+@@ -584,6 +588,7 @@ main.pageDisplay = function(page) {
+ 			break;
+ 		case 'list':
+ 			need_change = true;
++			change_auto = true;
+ 			var value = '[' + entry.value.length + ' items]';
+ 			items[items.length] = {
+ 				'text' : (entry.iconstring ? entry.iconstring : '') + entry.display + ': ' + value,
+@@ -616,6 +621,12 @@ main.pageDisplay = function(page) {
+ 		}
+ 	}
+ 
++	if (change_auto && page.layout.length === 1 && page.action.length === 0) {
++		/* Shortcut, just show the entry. */
++		this.menuSelect(page.layout[0]);
++		return;
++	}
++
+ 	var softkeys = [];
+ 	if (page.exitPath) {
+ 		softkeys[softkeys.length] = {
+diff --git a/functions.inc/aastra.class.php b/functions.inc/aastra.class.php
+index a938fa1..28c3e47 100644
+--- a/functions.inc/aastra.class.php
++++ b/functions.inc/aastra.class.php
+@@ -308,6 +308,7 @@ function aastra_page_display($page) {
+ 	$icons = array();
+ 
+ 	$need_change = false;
++	$change_auto = false;
+ 	$need_select = false;
+ 	$need_dial = false;
+ 	foreach ($page->layout as $entry) {
+@@ -322,14 +323,17 @@ function aastra_page_display($page) {
+ 			break;
+ 		case "text":
+ 			$need_change = true;
++			$change_auto = true;
+ 			$xml.= aastra_display_string($entry, true, false);
+ 			break;
+ 		case "password":
+ 			$need_change = true;
++			$change_auto = true;
+ 			$xml.= aastra_display_string($entry, true, true);
+ 			break;
+ 		case "number":
+ 			$need_change = true;
++			$change_auto = true;
+ 			$xml.= aastra_display_number($entry);
+ 			break;
+ 		case "bool":
+@@ -338,10 +342,12 @@ function aastra_page_display($page) {
+ 			break;
+ 		case "choice":
+ 			$need_change = true;
++			$change_auto = true;
+ 			$xml.= aastra_display_choice($entry);
+ 			break;
+ 		case "list":
+ 			$need_change = true;
++			$change_auto = true;
+ 			$xml.= aastra_display_list($entry);
+ 			break;
+ 		case "link":
+@@ -358,6 +364,10 @@ function aastra_page_display($page) {
+ 		}
+ 	}
+ 
++	if ($change_auto && count($page->layout) === 1 && count($page->action) === 0) {
++		return aastra_edit_entry($page->layout[0], NULL);
++	}
++
+ 	if (aastra_device_has_icons() && count($icons) > 0) {
+ 		$xml.= "<IconList>";
+ 		foreach ($icons as $key => $val) {
+@@ -540,32 +550,12 @@ function aastra_get_page($page_data, $page_args) {
+ 			break;
+ 		}
+ 	} else {
+-		/* Show the edit field screen */
+ 		foreach ($page->layout as $entry) {
+ 			if ($entry->name !== $selection) {
+ 				continue;
+ 			}
+ 
+-			switch ($entry->type) {
+-			case "label":
+-				$screen_xml.= aastra_edit_string($entry, false, false);
+-				break;
+-			case "text":
+-				$screen_xml.= aastra_edit_string($entry, true, false);
+-				break;
+-			case "password":
+-				$screen_xml.= aastra_edit_string($entry, true, true);
+-				break;
+-			case "number":
+-				$screen_xml.= aastra_edit_number($entry);
+-				break;
+-			case "choice":
+-				$screen_xml.= aastra_edit_choice($entry);
+-				break;
+-			case "list":
+-				$screen_xml.= aastra_edit_list($entry, $edit ? NULL : $list_id);
+-				break;
+-			}
++			$screen_xml.= aastra_edit_entry($entry, $edit ? NULL : $list_id);
+ 		}
+ 	}
+ 
+@@ -994,6 +984,33 @@ function aastra_edit_list($entry, $list_id) {
+ 	return $xml;
+ }
+ 
++function aastra_edit_entry($entry, $list_id) {
++	$xml = '';
++	/* Show the edit field screen */
++	switch ($entry->type) {
++	case "label":
++		$xml.= aastra_edit_string($entry, false, false);
++		break;
++	case "text":
++		$xml.= aastra_edit_string($entry, true, false);
++		break;
++	case "password":
++		$xml.= aastra_edit_string($entry, true, true);
++		break;
++	case "number":
++		$xml.= aastra_edit_number($entry);
++		break;
++	case "choice":
++		$xml.= aastra_edit_choice($entry);
++		break;
++	case "list":
++		$xml.= aastra_edit_list($entry, $list_id);
++		break;
++	}
++
++	return $xml;
++}
++
+ function aastra_device_has_softkeys() {
+ 	$ua = $GLOBALS["user_agent"];
+ 

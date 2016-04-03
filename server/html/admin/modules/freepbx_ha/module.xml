@@ -1,0 +1,52 @@
+<module>
+	<rawname>freepbx_ha</rawname>
+	<repo>commercial</repo>
+	<name>High Availability Services</name>
+	<version>12.0.2.1</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<category>Settings</category>
+	<commercial>
+		<type>paid</type>
+		<link>//schmoozecom.com/highavailability.php</link>
+	</commercial>
+	<description>COMMERCIAL MODULE REQUIES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. Enables High Availability Services for FreePBX</description>
+	<changelog>
+		*12.0.2.1* Handle special chars in Fencing properly
+		*12.0.2* Add IPMI Lanplus support
+		*12.0.1.1* Support for FreePBX 12, and support for updated drbdadm
+		*2.11.5* Complete standalone fixcluster application (installed in /usr/local/asterisk on both nodes), add some more checks/fixes.
+		*2.11.4* #7861 and repair broken buttons on R-Series page
+		*2.11.3* Better Cluster checks, and minor UI facelift.
+		*2.11.2* Fix installation error of 'Never received trigger'
+		*2.11.1.14* Add missing icons
+		*2.11.1.13* Fix IPMI Authentication issue
+		*2.11.1.12* Sales Cleanup
+		*2.11.1.11* Fix /var/run/asterisk errors.
+		*2.11.1.8* Minor SSH verification fix.
+		*2.11.1.7* Major Update, numerous bugfixes, support for iSymphony v3
+		*2.11.0.40* Add 'perform checks', better VMware fencing debug output.
+		*2.11.0.38* Disk Size fixed
+		*2.11.0.37* HP ILO Fix
+		*2.11.0.36* Ensure local network CIDR is detected correctly
+		*2.11.0.35* Fix for HTTPS and some BOND interfaces not being detected
+		*2.11.0.34* Remove from beta and release as stable
+		*2.11.0.31* Beta 2 Release
+		*2.11.0.25* Beta 1 Release
+	</changelog>
+	<depends>
+		<module>core</module>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<phpversion>5.3.0</phpversion>
+		<module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<menuitems>
+		<freepbx_ha>High Availability</freepbx_ha>
+	</menuitems>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<location></location>
+	<md5sum></md5sum>
+</module>

@@ -1,0 +1,61 @@
+<module>
+	<rawname>sysadmin</rawname>
+	<name>System Admin</name>
+	<publisher>Schmooze Com Inc.</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<version>12.0.12</version>
+	<category>Admin</category>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/sys-admin-pro.php</link>
+	</commercial>
+	<description>System Administration - COMMERCIAL MODULE REQUIRES A LICENSE FOR PRO FEATURES TO BE ENABLED ABOVE THE INCLUDED FREE FEATURES. Please visit www.schmoozecom.com/oss.php System Administration - provides access to various system administration tools. This module is designed to work with some very specific distributions such as the FreePBX Distro and PBXact. There are dependencies that are not all listed in this module.xml package so the module should not be used except on the distributions that it is designed for.  </description>
+	<changelog>
+		*12.0.12* Fix for Bria and WebRTC counting against exten cap
+		*12.0.11* FREEPBX-8368 - dealt with long filesystems
+		*12.0.10* FREEPBX-8368 - report any storage device
+		*12.0.9.9* FREEPBX-8437 - move documentation links into the tooltips
+		*12.0.9.8* Fix issue that caused sysadmin to hang during install in certain scenarios
+		*12.0.9.7* FREEPBX-8330 - fix issue where sysadmin would lose license status
+		*12.0.9.6* FREEPBX-8330 - get license page info from modules. Also attempt to fix rare port overwriting during install
+		*12.0.9.5* Fix updates for AsteriskNow
+		*12.0.9.4* Sales Page fixes for modules
+		*12.0.9.3* Fixes for better page load performance
+		*12.0.9.2* Remove support links
+		*12.0.9.1* Add minor fail2ban check
+		*12.0.8* FREEI-221
+		*12.0.7* Dont spit out license errors over and over
+		*12.0.6* FREEPBX-7972 - fix browser specific issues with previous fix
+		*12.0.5* FREEPBX-7972 delay page refresh on portmgmt change
+		*12.0.4* FREEPBX-7969 fix network settings
+		*12.0.3* Licensing Simplications
+		*12.0.2* Add queue call back hook
+		*12.0.1* Initial support for 12.
+	</changelog>
+	<depends>
+		<module>framework ge 12</module>
+		<phpversion>5.3.0</phpversion>
+		<phpcomponent>Zend Guard Loader</phpcomponent>
+		<file>/usr/sbin/incrond</file>
+	</depends>
+	<menuitems>
+		<sysadmin>System Admin</sysadmin>
+	</menuitems>
+	<bootstrap_hooks>
+		<pre_module_load>
+			<all_mods>modules/sysadmin/agi-bin/LoadLicenseIfExists.php</all_mods>
+		</pre_module_load>
+	</bootstrap_hooks>
+	<supported>
+		<version>12.0</version>
+	</supported>
+	<hooks>
+		<dashboard namespace="FreePBX\modules\Dashboard\Sections" class="Overview">
+			<method class="Sysadmin" callingMethod="getSummary">dashboardService</method>
+		</dashboard>
+	</hooks>
+	<location></location>
+	<md5sum></md5sum>
+</module>

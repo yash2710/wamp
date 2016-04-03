@@ -1,0 +1,8 @@
+(06 Feb 2015 21:09:32)-[DEBUG]: Starting CXPanel module
+(06 Feb 2015 21:09:32)-[DEBUG]: Checking manager connection
+(06 Feb 2015 21:09:32)-[DEBUG]: Agent login context: from-queue
+(06 Feb 2015 21:09:32)-[DEBUG]: Agent interface type: peer
+(06 Feb 2015 21:09:32)-[DEBUG]: Parking lot timeout: 200
+(06 Feb 2015 21:09:32)-[DEBUG]: Creating contexts ContextPrefix:c-x-3-operator-panel VariablePrefix:XMLNamespace
+(06 Feb 2015 21:09:32)-[DEBUG]: Executing modify.php
+(06 Feb 2015 21:09:32)-[DEBUG]: Total Running Time:0.066650152206421s

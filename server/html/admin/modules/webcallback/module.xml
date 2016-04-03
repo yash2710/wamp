@@ -1,0 +1,43 @@
+<module>
+	<rawname>webcallback</rawname>
+	<name>Web Callback</name>
+	<version>2.11.0.5</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>Commercial</license>
+	<licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Applications</category>
+	<description>COMMERCIAL MODULE REQUIRES A LICENSE FOR IT TO FUNCTION.  Please visit www.schmoozecom.com/oss.php. The Web Call Me module allows you to easily add an HTML call me box
+	to your website. Visitors simply put their phone number in to be connected with you, or a specific destination. The Web Callback module allows you to specify a CID to be prepended
+	which alerts you that the call is coming from a specific callback. You can also set Dial Matches to specify which numbers users are allows to call. Once you have set your
+	destination and saved changes you will be given HTML code to paste into your website. </description>
+	<commercial>
+		<type>paid</type>
+		<link>//www.schmoozecom.com/web-callme.php</link>
+	</commercial>
+	<menuitems>
+		<webcallback>Web Callback</webcallback>
+	</menuitems>
+	<changelog>
+		*2.11.0.5* Sales page cleanup
+		*2.11.0.2* Allow override of our contact form
+		*2.11.0.1* Remove the Power by Schmooze line from images
+		*2.11.0.0* Bump for 2.11
+		*2.10.0.19* default dial matches if none are set
+		*2.10.0.18* Packaging of ver 2.10.0.18
+		*2.10.0.17* Packaging of ver 2.10.0.17
+		*2.10.0.16* re #1305 - add num prepend
+		*2.10.0.15* Packaging of ver 2.10.0.15
+	</changelog>
+	<depends>
+        <version>2.7.0</version>
+        <phpcomponent>Zend Guard Loader</phpcomponent>
+        <phpversion>5.3.0</phpversion>
+        <module>sysadmin ge 2.11.0.50</module>
+	</depends>
+	<supported>
+		<version>2.10</version>
+	</supported>
+	<location>release/2.11/webcallback-2.11.0.0.tgz</location>
+	<md5sum>f5f045500107bb99e5693703d195a9de</md5sum>
+</module>

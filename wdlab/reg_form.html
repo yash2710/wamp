@@ -1,0 +1,214 @@
+<html>
+	<head>
+		<title>IR Registration Form</title>
+	</head>
+	<form>
+		<center>Registration cum Examination Form<br>Academic Year: 2015-16</center>
+		<table border="1">
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td>Reg. No.</td>
+							<td><input type="text" name="reg_no" ></td>
+							<td>Date</td>
+							<td><input type="date" name="date"></td>
+						</tr>
+						<tr>
+							<td>Name</td>
+							<td><input type="text" name="name"></td>
+						</tr>
+						<tr>
+							<td>Semester</td>
+							<td><input type="number"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Previous Semester Details</b>
+					<table>
+						<tr>
+							<td>Semester</td>
+							<td><input type="number" maxlength="9" name="prev_sem"></td>
+						</tr>
+						<tr>
+							<td>Month</td>
+							<td><input type="number" name="prev_month"></td>
+						</tr>
+						<tr>
+							<td>Year</td>
+							<td><input type="number" name="prev_year"></td>
+						</tr>
+						<tr>
+							<td>SPI</td>
+							<td><input type="number" name="prev_spi"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Part I:Initial Registration
+					<table border="1">
+						<tr>
+							<td>Sr. No.</td>
+							<td>Course Code</td>
+							<td>Course Name</td>
+							<td>Reg. Type</td>
+						</tr>
+						<tr>
+							<td align="center">1.</td>
+							<td><input type="text" maxlength="5" name="ir_s_1_code"></td>
+							<td><input type="text" name="ir_s_1_name"></td>
+							<td>IR</td>
+						</tr>
+						<tr>
+							<td align="center">2.</td>
+							<td><input type="text" maxlength="5" name="ir_s_2_code"></td>
+							<td><input type="text" name="ir_s_2_name"></td>
+							<td>IR</td>
+						</tr>
+						<tr>
+							<td align="center">3.</td>
+							<td><input type="text" maxlength="5" name="ir_s_3_code"></td>
+							<td><input type="text" name="ir_s_3_name"></td>
+							<td>IR</td>
+						</tr>
+					</table>
+					Total Courses (A):<input type="number" name="ir_total">
+				</td>
+			</tr>
+			<tr>
+				<b>Part II: RER: Re-Examination Registration</b>
+				<td>
+					<table border="1">
+						<tr>
+								<td>Sr. No.</td>
+								<td>Course Code</td>
+								<td>Course Name</td>
+								<td>Reg. Type</td>
+							</tr>
+							<tr>
+								<td align="center">1.</td>
+								<td><input type="text" maxlength="5" name="rer_s_1_code"></td>
+								<td><input type="text" name="rer_s_1_name"></td>
+								<td>RES</td>
+							</tr>
+							<tr>
+								<td align="center">2.</td>
+								<td><input type="text" maxlength="5" name="rer_s_2_code"></td>
+								<td><input type="text" name="rer_s_2_name"></td>
+								<td>REC</td>
+							</tr>
+							<tr>
+								<td align="center">3.</td>
+								<td><input type="text" maxlength="5" name="rer_s_3_code"></td>
+								<td><input type="text" name="rer_s_3_name"></td>
+								<td>RES</td>
+							</tr>
+					</table>
+					REC : Re-Examination Registration of CE component of a course
+					RES : Re-Examination Registration of SEE component of a course
+					Total Courses (B):<input type="number" name="rer_total">
+				</td>	
+			</tr>
+			<tr>
+				<td>
+					<table border="1">
+						<tr>
+								<td>Sr. No.</td>
+								<td>Course Code</td>
+								<td>Course Name</td>
+								<td>Reg. Type</td>
+							</tr>
+							<tr>
+								<td align="center">1.</td>
+								<td><input type="text" maxlength="5" name="rr_s_1_code"></td>
+								<td><input type="text" name="rr_s_1_name"></td>
+								<td>RS</td>
+							</tr>
+							<tr>
+								<td align="center">2.</td>
+								<td><input type="text" maxlength="5" name="rr_s_2_code"></td>
+								<td><input type="text" name="rr_s_2_name"></td>
+								<td>RL</td>
+							</tr>
+							<tr>
+								<td align="center">3.</td>
+								<td><input type="text" maxlength="5" name="rr_s_3_code"></td>
+								<td><input type="text" name="rr_s_3_name"></td>
+								<td>RS</td>
+							</tr>
+							<tr>
+								<td align="center">4.</td>
+								<td><input type="text" maxlength="5" name="rr_s_4_code"></td>
+								<td><input type="text" name="rr_s_4_name"></td>
+								<td>RS</td>
+							</tr>
+					</table>
+					RL : Repeat Registration of LPW component of a course
+					RS : Repeat Registration of SEE component of a course
+					Total Courses (C):<input type="number" name="rr_total">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td>Place:<input type="text" name="place"></td>
+						</tr>
+						<tr>
+							<td>Date:<input type="date" name="date_last"></td>
+						</tr>
+						<tr><td>Name:<input type="text" name="name_last"></td>
+						</tr>
+						<tr>
+							<td>Signature:<input type="text" name="sign"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Total Courses:
+					<table border="">
+						<tr>
+							<th>Part</th>
+							<th>No. of courses</th>
+						</tr>
+						<tr>
+							<td>Part I : A</td>
+							<td><input type="number"></td>
+						</tr>
+						<tr>
+							<td>Part II : B</td>
+							<td><input type="number"></td>
+						</tr>
+						<tr>
+							<td>Part III : C</td>
+							<td><input type="number"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr><td>Date:<input type="date" name="adv_date"></td></tr>
+						<tr><td>Faculty Advisor name and signature:<input type="text" name="adv_sign"></td></tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr><td>Date:<input type="date" name="hod_date"></td></tr>
+						<tr><td>HOD signature:<input type="text" name="hod_sign"></td></tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</form>
+</html>

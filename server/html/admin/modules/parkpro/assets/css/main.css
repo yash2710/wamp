@@ -1,0 +1,22 @@
+.hr {
+    width:50%;
+    text-align:left;
+    margin-left:0
+}
+
+#announce_order_sortable { 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	width: 650px; 
+}
+
+#announce_order_sortable li { 
+	margin: 3px 3px 3px 0; 
+	padding: 1px; 
+	float: left; 
+	width: 120px; 
+	height: 15px; 
+	text-align: center; 
+	font-size:90%
+}

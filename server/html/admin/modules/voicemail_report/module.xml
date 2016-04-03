@@ -1,0 +1,37 @@
+<module>
+	<rawname>voicemail_report</rawname>
+	<name>Voicemail Report</name>
+	<version>2.11.0.9</version>
+    <publisher>Schmooze Com Inc.</publisher>
+    <license>Commercial</license>
+    <licenselink>http://literature.schmoozecom.com/EUA/FreePBXCommercialModule-EndUserAgreement.txt</licenselink>
+	<repo>commercial</repo>
+	<category>Reports</category>
+	<description>Displays various information related to the voicemail system.</description>
+	<changelog>
+		2.11.0.9 Fix wording on view FREEPBX-8327
+		2.11.0.8 Tag the Repo Correctly
+		2.11.0.7 Fix issue with max_execution_time when system has a lot of voicemails
+		2.11.0.5 FREEPBX-6101 String to Int PHP Conversion errors
+		2.11.0.4 Fix text stating save was possible
+		2.11.0.3 Fix issue where play wouldn't work after sorting columns
+		2.11.0.2 fix missing image
+		2.11.0.1 Bump for 2.11
+		2.10.0.6 Packaging of ver 2.10.0.6
+	</changelog>
+	<depends>
+		<module>recordings</module>
+		<version>2.5.0</version>
+	<phpcomponent>Zend Guard Loader</phpcomponent>
+	<phpversion>5.3.0</phpversion>
+	<module>sysadmin ge 2.10.0</module>
+	</depends>
+	<menuitems>
+		<voicemail_report>Voicemail</voicemail_report>
+	</menuitems>
+	<supported>
+		<version>2.11</version>
+	</supported>
+	<location>release/2.11/voicemail_report-2.11.0.4.tgz</location>
+	<md5sum>ed27f9501e8972cffdae1d05329f6bfa</md5sum>
+</module>

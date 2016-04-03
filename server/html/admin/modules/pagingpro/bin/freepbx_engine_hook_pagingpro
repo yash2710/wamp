@@ -1,0 +1,9 @@
+#!/bin/bash
+# This script is called when the user executes amportal
+#
+# Check to make sure we are in the chown mode
+if [ "$1" == "start" ] || [ "$1" == "restart" ]
+    then
+    DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    /usr/bin/env php $DIR/pagepro-startup.php
+fi

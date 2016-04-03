@@ -1,0 +1,21 @@
+{
+  "name": "ucp-server",
+  "description": "UCP Backend Server",
+  "author": "Schmoozecom, Inc <info@schmoozecom.com>",
+  "dependencies": {
+    "asterisk-manager": "0.1.13",
+    "mariasql": "0.1.21",
+    "ini": "1.3.2",
+    "node-xmpp-client": "1.0.0-alpha18",
+    "ltx": "0.7.2",
+    "socket.io": ">= 1.2.1",
+    "forever": "0.13.0"
+  },
+  "engine": "node 0.10.29",
+  "private": true,
+  "scripts": {
+    "start": "node_modules/forever/bin/forever start -m 1 -a -l $ASTLOGDIR/ucp_forever.log -o $ASTLOGDIR/ucp_out.log -e $ASTLOGDIR/ucp_err.log --uid 'ucp' index.js",
+    "stop": "node_modules/forever/bin/forever stop --uid 'ucp' index.js",
+    "restart": "node_modules/forever/bin/forever restart --uid 'ucp' index.js"
+  }
+}
